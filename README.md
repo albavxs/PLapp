@@ -1,50 +1,52 @@
-# Welcome to your Expo app 👋
+## Pré-requisitos para rodar localmente
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+1. **Clone o Repositório**:
+   ```bash
+   git clone https://github.com/albavxs/PLapp.git
+   cd PLapp
+   ```
 
-## Get started
+2. **Node.js**:  Certifique-se de que o [Node.js](https://nodejs.org/) está instalado no seu sistema.
+   
+3. **Android Studio**: Certifique-se de que o [Android Studio](https://developer.android.com/) está instalado no seu sistema.
+   
+   Passos para rodar no Android Studio (emulador):
+   1. Abra o Android Studio.
+   2. Vá até **Tools > AVD Manager** (Android Virtual Device Manager).
+   3. Clique em **Create Virtual Device**.
+   4. Escolha o tipo de dispositivo (por exemplo, Pixel 4, versao 34 recomendada) e clique em **Next**.
+   5. Inicie o dispositivo.
 
-1. Install dependencies
+4. **Xcode (somente macOS)**:
+   Certifique-se de que o Xcode está instalado no seu sistema.
+   1. Abra o Xcode e vá até **Xcode > Preferences > Locations** para garantir que a linha de comando do Xcode está configurada corretamente.
+   2. Simulador iOS: Abra o Xcode, clique em **Xcode > Open Developer Tool > Simulator**. Isso abrirá o simulador de dispositivos iOS, onde você pode rodar seu app em um dispositivo   simulado. 
 
+5. **Expo CLI**: Instale globalmente :
+   ```bash
+   npm install -g expo-cli
+   ```
+
+6. **Dependências do Projeto**: Instale as dependências do projeto com:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+7. **Instale o `expo-splash-screen`**:
    ```bash
-    npx expo start
+   npm install expo-splash-screen
+
    ```
 
-In the output, you'll find options to open the app in a
+8. **Instale o `react-native-reanimated`**:
+   ```bash
+   npm install react-native-reanimated
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   ```
 
-## Get a fresh project
 
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+9. **Instale o `expo-linear-gradient`**:
+   ```bash
+   npm install expo-linear-gradient 
+   ```
