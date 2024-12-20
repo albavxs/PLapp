@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput, Button, TouchableOpacity, Text, View, Alert } from 'react-native';
+import { StyleSheet, TextInput, TouchableOpacity, Text, View, Alert, Image } from 'react-native'; // Certifique-se de importar Image corretamente
 import { ThemedText } from '../../components/ThemedText'; // Ajuste o caminho conforme necessário
 import { LinearGradient } from 'expo-linear-gradient';
+
 
 export default function LoginScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Simulação de verificação de login (substitua por autenticação real)
     if (username === 'admin' && password === '1234') {
       Alert.alert('Login Successful');
-      // Aqui você pode navegar para a tela principal ou outro fluxo
+      // Navegar para outra tela
     } else {
       Alert.alert('Login Failed', 'Invalid username or password');
     }
   };
 
   return (
-    <LinearGradient 
-      colors={['#20272F', '#20272F']} 
+    <LinearGradient
+      colors={['#20272F', '#20272F']}
       style={styles.gradientContainer}
     >
       <View style={styles.container}>
@@ -28,6 +28,7 @@ export default function LoginScreen() {
         <TextInput
           style={styles.input}
           placeholder="Username"
+          placeholderTextColor="#8e8e8e"
           value={username}
           onChangeText={setUsername}
         />
@@ -35,15 +36,31 @@ export default function LoginScreen() {
         <TextInput
           style={styles.input}
           placeholder="Password"
+          placeholderTextColor="#8e8e8e"
           secureTextEntry
           value={password}
           onChangeText={setPassword}
-        
         />
-        
         
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
           <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity>
+        
+
+        <TouchableOpacity style={[styles.socialButton, styles.facebookButton]}>
+          <Image
+            source={require('../../assets/images/facebook.png')} // Caminho da imagem Facebook
+            style={styles.icon}
+          />
+          <Text style={[styles.buttonText, styles.socialButtonText]}>Continue with Facebook</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[styles.socialButton, styles.googleButton]}>
+          <Image
+            source={require('../../assets/images/google.png')} // Caminho da imagem Google
+            style={styles.icon}
+          />
+          <Text style={[styles.buttonText, styles.socialButtonText]}>Continue with Google</Text>
         </TouchableOpacity>
       </View>
     </LinearGradient>
@@ -52,51 +69,78 @@ export default function LoginScreen() {
 
 const styles = StyleSheet.create({
   gradientContainer: {
-    flex: 1, // Preenche a tela inteira
-    justifyContent: 'flex-start', // Alinha o conteúdo ao topo
-    alignItems: 'center', // Centraliza horizontalmente
-    paddingTop: 70, // Adiciona um espaçamento do topo (ajuste conforme necessário)
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingTop: 70,
   },
   container: {
-    width: '80%', // Define a largura da tela de login
+    width: '80%',
     padding: 20,
     borderRadius: 10,
-    alignItems: 'center', // Alinha os componentes no centro
+    alignItems: 'center',
   },
   text: {
-       fontSize: 24,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#fff',
-    marginBottom: 20, // Espaço entre o título e os campos de entrada
-    textAlign: 'left', // Alinha o texto à esquerda
-    width: '100%', // Garante que o texto ocupe toda a largura disponível
+    marginBottom: 20,
+    textAlign: 'left',
+    width: '100%',
   },
   input: {
-    width: '100%', // Preenche a largura disponível
+    width: '100%',
     height: 40,
     borderColor: '#ccc',
     borderWidth: 1,
     borderRadius: 15,
-    backgroundColor: 'rgba(253, 253, 253, 0.97)', // Fundo semitransparente para contraste com o gradiente
+    backgroundColor: 'rgba(253, 253, 253, 0.97)',
     marginBottom: 15,
     paddingLeft: 10,
-    color: '#20272Ff', // Cor do texto dos inputs
+    color: '#20272F',
   },
   button: {
-    width: '100%', // Largura total
-    height: 45, // Altura do botão
-    borderRadius: 25, // Bordas arredondadas
-    backgroundColor: '#7a4dff', // Cor de fundo
-    justifyContent: 'center', // Centraliza o texto verticalmente
-    alignItems: 'center', // Centraliza o texto horizontalmente
-    borderWidth: 2, // Largura da borda
-    borderColor: '#fff', // Cor da borda
-    marginTop: 5, // Espaço acima do botão
+    width: '100%',
+    height: 45,
+    borderRadius: 25,
+    backgroundColor: '#7a4dff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 15,
+     marginBottom: 145,
   },
   buttonText: {
-    color: '#fff', // Cor do texto
-    fontSize: 18, // Tamanho da fonte
-    fontWeight: 'bold', // Negrito
-  
+    color: '#fff',
+    position: 'absolute',
+    fontSize: 18,
+     marginTop: 0,
+    fontWeight: 'bold',
+  },
+  socialButton: {
+    width: '100%',
+    height: 45,
+    borderRadius: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 15,
+  },
+  facebookButton: {
+    backgroundColor: '#fff',
+    marginTop: 10,
+  },
+  googleButton: {
+    backgroundColor: '#fff',
+    marginTop: 10,
+  },
+  socialButtonText: {
+    color: 'black',
+    fontSize: 16,
+  },
+  icon: {
+    
+    width: 20,
+    height: 20,
+    marginTop: -3,
+    marginRight: 235,
   },
 });
