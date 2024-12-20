@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { StyleSheet, TextInput, TouchableOpacity, Text, View, Alert, Image } from 'react-native'; // Certifique-se de importar Image corretamente
 import { ThemedText } from '../../components/ThemedText'; // Ajuste o caminho conforme necessário
 import { LinearGradient } from 'expo-linear-gradient';
-
+import { useRouter } from 'expo-router'; // Importação para navegação
 
 export default function LoginScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const router = useRouter(); // Hook de navegação
 
   const handleLogin = () => {
     if (username === 'admin' && password === '1234') {
@@ -43,9 +44,21 @@ export default function LoginScreen() {
         />
         
         <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Login</Text>
+          <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
         
+        {/* Link para "Esqueceu a senha?" */}
+        <TouchableOpacity onPress={() => router.push('/forgotpassword')}>
+            <Text style={styles.forgotPasswordText}>
+           Forgot password? <Text style={styles.linkText}>reset</Text>
+            </Text>
+         </TouchableOpacity>
+         {/* Texto "Don't have an account?" */}
+        <TouchableOpacity onPress={() => router.push('/createAccount')}>
+          <Text style={styles.createAccountText}>
+            Don't have an account? <Text style={styles.createAccountLink}>Create one</Text>
+          </Text>
+        </TouchableOpacity>
 
         <TouchableOpacity style={[styles.socialButton, styles.facebookButton]}>
           <Image
@@ -107,26 +120,26 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 15,
-     marginBottom: 145,
+    marginBottom: 20,
   },
   buttonText: {
     color: '#fff',
-    position: 'absolute',
     fontSize: 18,
-     marginTop: 0,
     fontWeight: 'bold',
   },
-  socialButton: {
+ 
+    socialButton: {
     width: '100%',
     height: 45,
     borderRadius: 25,
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'row', // Certifica-se de alinhar ícone e texto lado a lado
     marginTop: 15,
   },
   facebookButton: {
     backgroundColor: '#fff',
-    marginTop: 10,
+    marginTop: 90,
   },
   googleButton: {
     backgroundColor: '#fff',
@@ -135,12 +148,32 @@ const styles = StyleSheet.create({
   socialButtonText: {
     color: 'black',
     fontSize: 16,
+    marginLeft: 10, // Espaçamento entre o ícone e o texto
   },
   icon: {
-    
     width: 20,
     height: 20,
-    marginTop: -3,
-    marginRight: 235,
   },
+  createAccountText: {
+    marginTop: 15,
+    color: '#fff',
+    fontSize: 14,
+    marginRight: 46,
+    width: 221,
+    
+  },
+   forgotPasswordText: {
+    marginTop: 2,
+    color: '#fff',
+    marginRight: 120,
+   
+  },
+  createAccountLink: {
+    color: '#7a4dff',
+    textDecorationLine: 'underline',
+  },
+  linkText: {
+  color: '#7a4dff',
+  textDecorationLine: 'underline',
+},
 });
