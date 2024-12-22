@@ -3,6 +3,7 @@ import { StyleSheet, TextInput, TouchableOpacity, Text, View, Alert } from 'reac
 import { ThemedText } from '../../components/ThemedText'; // Ajuste o caminho conforme necessário
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router'; // Importação para navegação
+import { styles } from '@/components/stylesheet';
 
 export default function CreateAccountScreen() {
   const [username, setUsername] = useState('');
@@ -68,51 +69,3 @@ export default function CreateAccountScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  gradientContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    paddingTop: 70,
-  },
-  container: {
-    width: '80%',
-    padding: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginBottom: 20,
-    textAlign: 'left',
-    width: '100%',
-  },
-  input: {
-    width: '100%',
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: 'rgba(253, 253, 253, 0.97)',
-    marginBottom: 15,
-    paddingLeft: 10,
-    color: '#20272F',
-  },
-  button: {
-    width: '100%',
-    height: 45,
-    borderRadius: 25,
-    backgroundColor: '#7a4dff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 15,
-    marginBottom: 20,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-});

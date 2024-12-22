@@ -22,23 +22,19 @@
    1. Abra o Xcode e vá até **Xcode > Preferences > Locations** para garantir que a linha de comando do Xcode está configurada corretamente.
    2. Simulador iOS: Abra o Xcode, clique em **Xcode > Open Developer Tool > Simulator**. Isso abrirá o simulador de dispositivos iOS, onde você pode rodar seu app em um dispositivo   simulado. 
 
-5. **Expo CLI**: Instale globalmente :
-   ```bash
-   npm install -g expo-cli
-   ```
 
-6. **Dependências do Projeto**: Instale as dependências do projeto com:
+5. **Dependências do Projeto**: Instale as dependências do projeto com:
    ```bash
    npm install
    ```
 
-7. **Instale o `expo-splash-screen`**:
+6. **Instale o `expo-splash-screen`**:
    ```bash
    npm install expo-splash-screen
 
    ```
 
-8. **Instale o `react-native-reanimated`**:
+7. **Instale o `react-native-reanimated`**:
    ```bash
    npm install react-native-reanimated
 
@@ -46,7 +42,7 @@
    ```
 
 
-9. **Instale o `expo-linear-gradient`**:
+8. **Instale o `expo-linear-gradient`**:
    ```bash
    npm install expo-linear-gradient 
    ```

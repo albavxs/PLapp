@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import {  Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router'; // Importação do hook de navegação
-
+import { styles } from '@/components/stylesheet';
 export default function ForgotPassword() {
   const router = useRouter(); // Hook de navegação
 
@@ -28,40 +28,3 @@ export default function ForgotPassword() {
   );
 }
 
-const styles = StyleSheet.create({
-  gradientContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    paddingTop: 70,
-  },
-  container: {
-    width: '80%',
-    padding: 20,
-    borderRadius: 10,
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#fff',
-    marginTop: 55,
-    textAlign: 'center',
-    width: '100%',
-  },
-  button: {
-    width: '100%',
-    height: 45,
-    borderRadius: 25,
-    backgroundColor: '#7a4dff',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 15,
-    marginBottom: 20,
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-});
