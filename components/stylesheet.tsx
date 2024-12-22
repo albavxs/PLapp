@@ -112,52 +112,90 @@ export const styles = StyleSheet.create({
   },
   
   //Home
-
-  productsb: {
-    width: '100%',
+   returnButton: {
+    width: '15%',
+    position: 'absolute',
     height: 45,
     borderRadius: 25,
+    backgroundColor: '#fff',
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 15,
     marginBottom: 20,
-    
-  },
-  imageproductsb: {
-    position: 'absolute',
-    width: 60,
-    height: 60,
-    borderRadius: 55,
-     alignSelf: 'flex-start',
-
-  },
-  imageproductsl: {
-     position: 'absolute',
-    width: 60,
-    height: 60,
-    borderRadius: 55,
-    marginRight: 170,
-    marginBottom: 20,
+    marginRight: 10,          
+    marginLeft: 10,          
   },
 
-  inputhomescr: {
-    width: '130%',
-    height: 40,
-    borderColor: '#ccc',
-    borderWidth: 1,
-    borderRadius: 20,
-    backgroundColor: 'rgba(253, 253, 253, 0.97)',
-    marginBottom: 15,
-    paddingLeft: 10,
+    inputhomescr: {
+    width: '100%',          
+    height: 40,  
+    borderColor: '#ccc',          
+    borderWidth: 1,          
+    borderRadius: 20,   
+    backgroundColor: 'rgba(253, 253, 253, 0.97)',          
+    marginBottom: 15,          
+    paddingLeft: 10,          
     color: '#20272F',
   },
-  textproductsb: {
-    
-     color: '#fff',
+
+   sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 15,
+    alignSelf: 'flex-start',
+  },
+  categoryList: {
+    marginBottom: 20,
+  },
+  categoryCard: {
+    alignItems: 'center',
+    marginRight: 15,
+  },
+  categoryImage: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: '#555',
+    marginBottom: 5,
+  },
+  categoryName: {
+    color: '#fff',
+    fontSize: 14,
+  },
+  productList: {
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 10,
+  },
+  card: {
+    width: '45%',
+    margin: 5,
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 10,
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  image: {
+    width: 100,
+    height: 150,
+    marginBottom: 10,
+    resizeMode: 'cover',
+  },
+  name: {
     fontSize: 16,
     fontWeight: 'bold',
-    marginBottom: -90,
-    
-    
+    color: '#333',
+    marginBottom: 5,
+    textAlign: 'center',
+  },
+  price: {
+    fontSize: 14,
+    color: '#666',
   },
 });
