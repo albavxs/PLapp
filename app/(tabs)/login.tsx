@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, TouchableOpacity, Text, Alert, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router'; // Importação para navegação
-import { styles } from '@/components/stylesheet';
+import { styles } from '@/components/Stylesheet';
 import { ThemedText } from '@/components/ThemedText'; // Ajuste o caminho conforme necessário
 
 export default function LoginScreen() {

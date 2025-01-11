@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router';
-import { styles } from '@/components/stylesheet';
+import { styles } from '@/components/Stylesheet';
 
 // Dados das categorias
 const categories = [

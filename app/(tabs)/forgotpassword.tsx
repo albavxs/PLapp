@@ -2,13 +2,13 @@ import React from 'react';
 import {  Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router'; // Importação do hook de navegação
-import { styles } from '@/components/stylesheet';
+import { styles } from '@/components/Stylesheet';
 export default function ForgotPassword() {
   const router = useRouter(); // Hook de navegação
 
   // Função para voltar ao login (index.tsx)
   const returnToLogin = () => {
-    router.push('/'); // Navegar de volta para a página de login (index.tsx)
+    router.push('/(tabs)/login'); // Navegar de volta para a página de login (index.tsx)
   };
 
   return (

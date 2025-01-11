@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, TouchableOpacity, Text, View, Alert } from 'reac
 import { ThemedText } from '../../components/ThemedText'; // Ajuste o caminho conforme necessário
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router'; // Importação para navegação
-import { styles } from '@/components/stylesheet';
+import { styles } from '@/components/Stylesheet';
 
 export default function CreateAccountScreen() {
   const [username, setUsername] = useState('');
@@ -12,7 +12,7 @@ export default function CreateAccountScreen() {
 
   // Função para retornar à tela de login
   const returnToLogin = () => {
-    router.push('/'); // Caminho para a página de login
+    router.push('/(tabs)/login'); // Caminho para a página de login
   };
 
   return (
