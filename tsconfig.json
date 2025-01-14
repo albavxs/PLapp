@@ -2,11 +2,10 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
-    "jsx": "react",  // Add this line to enable JSX support
+    "jsx": "react",  // Habilita suporte a JSX
+    "baseUrl": ".",  // Base para caminhos relativos
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": [""] 
     }
   },
   "include": [

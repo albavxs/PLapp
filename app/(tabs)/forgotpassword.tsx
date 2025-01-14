@@ -2,7 +2,7 @@ import React from 'react';
 import {  Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useRouter } from 'expo-router'; // Importação do hook de navegação
-import { styles } from '@/components/Stylesheet';
+import { styles } from '../../components/StyleSheet';
 export default function ForgotPassword() {
   const router = useRouter(); // Hook de navegação
 

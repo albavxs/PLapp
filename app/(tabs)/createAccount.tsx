@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Picker } from '@react-native-picker/picker';
 import { View, Text, TextInput, TouchableOpacity, Image, Alert } from 'react-native';
-import { styles } from '@/components/CreateScreenStyles';
+import { styles } from '../../components/CreateScreenStyles';
 
 const CreateAccountScreen: React.FC = () => {
   const [firstname, setFirstname] = useState('');
@@ -24,7 +24,7 @@ const CreateAccountScreen: React.FC = () => {
   return (
     <View style={styles.gradientContainer}>
       <TouchableOpacity style={styles.arrowButton}>
-      <Image style={styles.arrowImage} source={require('@/assets/images/back-arrow.png')} />
+      <Image style={styles.arrowImage} source={require('../../assets/images/back-arrow.png')} />
       </TouchableOpacity>
       <Text style={styles.text}>Create Account</Text>
       <View style={styles.container}>
