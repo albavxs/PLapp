@@ -8,7 +8,7 @@ export default function ForgotPassword() {
 
   // Função para voltar ao login (index.tsx)
   const returnToLogin = () => {
-    router.push('/(tabs)/login'); // Navegar de volta para a página de login (index.tsx)
+    router.push('/(tabs)/LoginScreen'); // Navegar de volta para a página de login (index.tsx)
   };
 
   return (

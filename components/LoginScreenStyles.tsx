@@ -1,0 +1,76 @@
+import React from 'react';
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100vh',
+    backgroundColor: '#333',
+    color: '#fff',
+    padding: '0 20px',
+  },
+  title: {
+    marginBottom: '20px',
+  },
+  form: {
+    display: 'flex',
+    flexDirection: 'column' as const,
+    width: '100%',
+    maxWidth: '400px',
+  },
+  input: {
+    padding: '10px',
+    marginBottom: '10px',
+    borderRadius: '5px',
+    border: 'none',
+    fontSize: '16px',
+  },
+  continueButton: {
+    padding: '10px',
+    borderRadius: '5px',
+    border: 'none',
+    backgroundColor: '#7a4ce0',
+    color: '#fff',
+    fontSize: '16px',
+    cursor: 'pointer',
+  },
+  linksContainer: {
+    marginTop: '10px',
+    display: 'flex',
+    flexDirection: 'column' as const,
+    alignItems: 'center',
+  },
+  link: {
+    color: '#7a4ce0',
+    textDecoration: 'none',
+    margin: '5px 0',
+  },
+  socialButtonsContainer: {
+    marginTop: '20px',
+    display: 'flex',
+    flexDirection: 'column' as const,
+    alignItems: 'center',
+    gap: '10px',
+  },
+  socialButton: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: '10px',
+    width: '100%',
+    maxWidth: '400px',
+    borderRadius: '5px',
+    border: '1px solid #ccc',
+    backgroundColor: '#fff',
+    color: '#000',
+    fontSize: '16px',
+    cursor: 'pointer',
+  },
+  icon: {
+    marginRight: '10px',
+    height: '20px',
+    width: '20px',
+  },
+};

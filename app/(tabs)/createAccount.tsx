@@ -1,71 +1,82 @@
 import React, { useState } from 'react';
-import { StyleSheet, TextInput, TouchableOpacity, Text, View, Alert } from 'react-native';
-import { ThemedText } from '../../components/ThemedText'; // Ajuste o caminho conforme necessário
-import { LinearGradient } from 'expo-linear-gradient';
-import { useRouter } from 'expo-router'; // Importação para navegação
-import { styles } from '@/components/Stylesheet';
+import { Picker } from '@react-native-picker/picker';
+import { View, Text, TextInput, TouchableOpacity, Image, Alert } from 'react-native';
+import { styles } from '@/components/CreateScreenStyles';
 
-export default function CreateAccountScreen() {
-  const [username, setUsername] = useState('');
+const CreateAccountScreen: React.FC = () => {
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const router = useRouter(); // Hook de navegação
+  const [age, setAge] = useState('');
 
-  // Função para retornar à tela de login
-  const returnToLogin = () => {
-    router.push('/(tabs)/login'); // Caminho para a página de login
+  // Form submission handler
+  const handleSubmit = () => {
+    if (!firstname || !lastname || !email || !password || !age) {
+      Alert.alert('Error', 'Please fill all fields');
+      return;
+    }
+    
+    // You can implement further validation and navigation here
+    Alert.alert('Account Created', 'Your account has been created!');
   };
 
   return (
-    <LinearGradient
-      colors={['#20272F', '#20272F']}
-      style={styles.gradientContainer}
-    >
+    <View style={styles.gradientContainer}>
+      <TouchableOpacity style={styles.arrowButton}>
+      <Image style={styles.arrowImage} source={require('@/assets/images/back-arrow.png')} />
+      </TouchableOpacity>
+      <Text style={styles.text}>Create Account</Text>
       <View style={styles.container}>
-        <ThemedText type="title" style={styles.text}>Create Account</ThemedText>
-        
         <TextInput
           style={styles.input}
           placeholder="Firstname"
-          placeholderTextColor="#8e8e8e"
-          value={username}
-          onChangeText={setUsername}
+          placeholderTextColor="#20272F"
+          value={firstname}
+          onChangeText={setFirstname}
         />
         <TextInput
           style={styles.input}
           placeholder="Lastname"
-          placeholderTextColor="#8e8e8e"
-          value={username}
-          onChangeText={setUsername}
+          placeholderTextColor="#20272F"
+          value={lastname}
+          onChangeText={setLastname}
         />
         <TextInput
           style={styles.input}
           placeholder="Email Address"
-          placeholderTextColor="#8e8e8e"
-          value={username}
-          onChangeText={setUsername}
-        />
-        <TextInput
-          style={styles.input}
-          placeholder="Username"
-          placeholderTextColor="#8e8e8e"
-          value={username}
-          onChangeText={setUsername}
+          placeholderTextColor="#20272F"
+          value={email}
+          onChangeText={setEmail}
         />
         <TextInput
           style={styles.input}
           placeholder="Password"
-          placeholderTextColor="#8e8e8e"
           secureTextEntry
+          placeholderTextColor="#20272F"
           value={password}
           onChangeText={setPassword}
         />
-        
-        {/* Botão para retornar ao login */}
-        <TouchableOpacity style={styles.button} onPress={returnToLogin}>
-          <Text style={styles.buttonText}>Return to Login</Text>
+        <Text style={styles.label}>How Old are you?</Text>
+        <View style={styles.pickerContainer}>
+          <Picker
+            style={styles.picker}
+            selectedValue={age}
+            onValueChange={setAge}
+          >
+            <Picker.Item label="Age Range" value="" />
+            <Picker.Item label="18-25" value="18-25" />
+            <Picker.Item label="26-35" value="26-35" />
+            <Picker.Item label="36-45" value="36-45" />
+            <Picker.Item label="46+" value="46+" />
+          </Picker>
+        </View>
+        <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+          <Text style={styles.buttonText}>Continue</Text>
         </TouchableOpacity>
       </View>
-    </LinearGradient>
+    </View>
   );
-}
+};
 
+export default CreateAccountScreen;

@@ -1,31 +1,13 @@
 // screens/SplashScreen.tsx
-import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import React from 'react';
+import { View, Image } from "react-native";
+import styles from '@/components/SplashScreenStyles'; // Certifique-se de que o caminho está correto
 
 export default function SplashScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>P / L</Text>
-      <Text style={styles.text}>PRIME LOOK</Text>
+      {/* Exibindo apenas o logo */}
+      <Image style={styles.splashImage} source={require('@/assets/images/Splash.png')} />
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#1E1E1E",
-  },
-  logo: {
-    fontSize: 48,
-    fontWeight: "bold",
-    color: "#FFFFFF",
-  },
-  text: {
-    fontSize: 24,
-    color: "#FFFFFF",
-    marginTop: 10,
-  },
-});

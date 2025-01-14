@@ -1,0 +1,83 @@
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+  gradientContainer: {
+    flex: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingTop: 70,
+    backgroundColor: '#333',
+  },
+  container: {
+    width: '80%',
+    padding: 20,
+    borderRadius: 10,
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 20,
+    textAlign: 'left',
+    width: '100%',
+  },
+  input: {
+    width: '100%',
+    height: 40,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    borderRadius: 20,
+    backgroundColor: 'rgba(253, 253, 253, 0.97)',
+    marginBottom: 15,
+    paddingLeft: 10,
+    color: '#20272F',
+  },
+  button: {
+    width: '100%',
+    height: 45,
+    borderRadius: 25,
+    backgroundColor: '#7a4dff',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 15,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  label: {
+    alignSelf: 'flex-start',
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#fff',
+    marginBottom: 10,
+  },
+  pickerContainer: {
+    width: '100%',
+    borderRadius: 20,
+    borderColor: '#ccc',
+    borderWidth: 1,
+    backgroundColor: 'rgba(253, 253, 253, 0.97)',
+    marginBottom: 15,
+  },
+  picker: {
+    width: '100%',
+    height: 40,
+    color: '#20272F',
+  },
+  arrowButton: {
+    position: 'absolute',
+    top: 30,
+    left: 10,
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  arrowImage: {
+    width: 20,
+    height: 20,
+  },
+});
