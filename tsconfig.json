@@ -1,6 +1,18 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "strict": true
-  }
+    "strict": true, // Mantém a configuração de modo estrito
+    "baseUrl": ".", // Define a raiz do diretório para importações
+    "paths": {
+      "@/*": [
+        ""
+      ],
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
 }
