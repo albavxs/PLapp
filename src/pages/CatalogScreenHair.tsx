@@ -7,19 +7,19 @@ const products = [
     id: "1",
     name: "Shampoo para Cabelo",
     price: "$40",
-    image: require("../assets/ShampCabelo.png"), // Caminho local
+    image: require("../assets/images/ShampCabelo.png"), // Caminho local
   },
   {
     id: "2",
     name: "Kit cuidados com o Cabelo",
     price: "$150",
-    image: require("../assets/Kitcabelo.png"), // Caminho local
+    image: require("../assets/images/Kitcabelo.png"), // Caminho local
   },
   {
     id: "3",
     name: "Condicionador",
     price: "$110",
-    image: require("../assets/cond.png"), // Caminho local
+    image: require("../assets/images/cond.png"), // Caminho local
   },
  
 ];
