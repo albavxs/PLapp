@@ -5,7 +5,7 @@ const { width } = Dimensions.get("window");
 const styles = StyleSheet.create({
   scrollContainer: {
     flexGrow: 1,
-    backgroundColor: "#3D3B3A",
+    backgroundColor: "#1E1E1E",
     padding: 20,
   },
   header: {
@@ -67,13 +67,14 @@ const styles = StyleSheet.create({
   categoryText: {
     fontSize: 14,
     color: "#FFFFFF"
-    
+
   },
   products: {
-    
-    justifyContent: 'space-between',
+    flexDirection: "row", // Alinha os itens em linha
+    flexWrap: "wrap", // Permite que os itens que não cabem na linha quebrem para a próxima
+    justifyContent: "space-between", // Adiciona espaço uniforme entre os itens
     marginBottom: 30,
-    
+
   },
   product: {
     backgroundColor: "#EBEBDE",
@@ -81,7 +82,8 @@ const styles = StyleSheet.create({
     padding: 16,
     alignItems: "center",
     marginBottom: 16,
-    marginHorizontal: 8,
+    width: (width - 60) / 2, // Divide a largura da tela para caber dois cards lado a lado, considerando margens
+    marginHorizontal: 5, // Adiciona um pequeno espaçamento horizontal entre os cards
   },
   productImage: {
     width: 80,
