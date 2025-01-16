@@ -10,6 +10,8 @@ import {
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../App"; // Ajuste para suas rotas
 import styles from "../Styles/HomeScreenStyles";
+import { AiOutlineHome, AiOutlineSetting } from "react-icons/ai";
+import { BiFace } from "react-icons/bi";
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "HomeScreen">;
 
@@ -47,12 +49,12 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={styles.categories}>
         <TouchableOpacity onPress={() => navigation.navigate("CatalogScreen")}>
           <View style={styles.category}>
-            <Image source={require("src/assets/icons/cabelo.png")} style={styles.categoryImage} />
+            <Image source={require("src/assets/images/cabelo.png")} style={styles.categoryImage} />
             <Text style={styles.categoryText}>Cabelo</Text> 
           </View>
         </TouchableOpacity>
         <View style={styles.category}>
-          <Image source={require("src/assets/icons/barba.png")} style={styles.categoryImage} />
+          <Image source={require("src/assets/images/barba.png")} style={styles.categoryImage} />
           <Text style={styles.categoryText}>Barba</Text>
         </View>
       </View>
@@ -66,22 +68,22 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       </View>
       <View style={styles.products}>
         <View style={styles.product}>
-          <Image source={require("src/assets/icons/2.png")} style={styles.productImage} />
+          <Image source={require("src/assets/images/2.png")} style={styles.productImage} />
           <Text style={styles.productName}>Shampoo para Barba</Text>
           <Text style={styles.productPrice}>$47.00</Text>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/icons/1.png")} style={styles.productImage} />
+          <Image source={require("src/assets/images/1.png")} style={styles.productImage} />
           <Text style={styles.productName}>Espuma de Barbear</Text>
           <Text style={styles.productPrice}>$35.00</Text>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/icons/2.png")} style={styles.productImage} />
+          <Image source={require("src/assets/images/2.png")} style={styles.productImage} />
           <Text style={styles.productName}>Shampoo para Barba</Text>
           <Text style={styles.productPrice}>$47.00</Text>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/icons/2.png")} style={styles.productImage} />
+          <Image source={require("src/assets/images/2.png")} style={styles.productImage} />
           <Text style={styles.productName}>Shampoo para Barba</Text>
           <Text style={styles.productPrice}>$47.00</Text>
         </View>
@@ -90,14 +92,14 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
       {/* Footer */}
       <View style={styles.footer}>
-        <TouchableOpacity>
-          <Image source={require("src/assets/icons/Home.png")} style={styles.footerIcon} />
+        <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
+          <AiOutlineHome size={24} color="#fff" />
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={require("src/assets/icons/FaceID.png")} style={styles.footerIcon} />
+        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreen")}>
+          <BiFace size={24} color="#fff" />
         </TouchableOpacity>
-        <TouchableOpacity>
-          <Image source={require("src/assets/icons/Settings.png")} style={styles.footerIcon} />
+        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreen")}>
+          <AiOutlineSetting size={24} color="#fff" />
         </TouchableOpacity>
       </View>
     </ScrollView>
