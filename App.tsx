@@ -5,11 +5,13 @@ import { createStackNavigator } from "@react-navigation/stack";
 import SplashScreen from "./src/pages/SplashScreen";
 import HomeScreen from "./src/pages/HomeScreen";
 import CatalogScreen from "./src/pages/CatalogScreenHair";
+import LoginScreen from "./src/pages/LoginScreen"; // Import da nova tela de login
 
 // Tipos das rotas
 export type RootStackParamList = {
   HomeScreen: undefined;
   CatalogScreen: undefined;
+  LoginScreen: undefined; // Adicionado LoginScreen ao tipo
 };
 
 // Criação do navegador de pilha
@@ -45,6 +47,14 @@ const App = () => {
           component={CatalogScreen}
           options={{
             title: "Cabelo (3)",
+            headerStyle: { backgroundColor: "#f9f9f9" },
+          }}
+        />
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen} // Adicionado LoginScreen como rota
+          options={{
+            title: "Login",
             headerStyle: { backgroundColor: "#f9f9f9" },
           }}
         />
