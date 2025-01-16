@@ -29,6 +29,8 @@ const TabNavigator = () => (
           iconName = "home";
         } else if (route.name === "Catalog") {
           iconName = "style"; // Ícone relacionado a catálogo
+        } else {
+          iconName = "help-outline"; // Valor padrão (fallback)
         }
 
         // Renderiza o componente Icon corretamente

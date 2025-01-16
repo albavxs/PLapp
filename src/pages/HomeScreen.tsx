@@ -23,16 +23,16 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity>
-          <Image source={require("src/assets/Account.png")} style={styles.icon} />
+          <Image source={require("src/assets/icons/Account.png")} style={styles.icon} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image source={require("src/assets/Bag.png")} style={styles.icon} />
+          <Image source={require("src/assets/images/Bag.png")} style={styles.icon} />
         </TouchableOpacity>
       </View>
 
       {/* Search Bar */}
       <View style={styles.searchBar}>
-        <Image source={require("src/assets/search.png")} style={styles.searchIcon} />
+        <Image source={require("src/assets/icons/search.png")} style={styles.searchIcon} />
         <TextInput style={styles.searchInput} placeholder="Search" placeholderTextColor="#272727" />
       </View>
 
@@ -47,12 +47,12 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={styles.categories}>
         <TouchableOpacity onPress={() => navigation.navigate("CatalogScreen")}>
           <View style={styles.category}>
-            <Image source={require("src/assets/cabelo.png")} style={styles.categoryImage} />
+            <Image source={require("src/assets/icons/cabelo.png")} style={styles.categoryImage} />
             <Text style={styles.categoryText}>Cabelo</Text> 
           </View>
         </TouchableOpacity>
         <View style={styles.category}>
-          <Image source={require("src/assets/barba.png")} style={styles.categoryImage} />
+          <Image source={require("src/assets/icons/barba.png")} style={styles.categoryImage} />
           <Text style={styles.categoryText}>Barba</Text>
         </View>
       </View>
@@ -66,22 +66,22 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       </View>
       <View style={styles.products}>
         <View style={styles.product}>
-          <Image source={require("src/assets/2.png")} style={styles.productImage} />
+          <Image source={require("src/assets/icons/2.png")} style={styles.productImage} />
           <Text style={styles.productName}>Shampoo para Barba</Text>
           <Text style={styles.productPrice}>$47.00</Text>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/1.png")} style={styles.productImage} />
+          <Image source={require("src/assets/icons/1.png")} style={styles.productImage} />
           <Text style={styles.productName}>Espuma de Barbear</Text>
           <Text style={styles.productPrice}>$35.00</Text>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/2.png")} style={styles.productImage} />
+          <Image source={require("src/assets/icons/2.png")} style={styles.productImage} />
           <Text style={styles.productName}>Shampoo para Barba</Text>
           <Text style={styles.productPrice}>$47.00</Text>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/2.png")} style={styles.productImage} />
+          <Image source={require("src/assets/icons/2.png")} style={styles.productImage} />
           <Text style={styles.productName}>Shampoo para Barba</Text>
           <Text style={styles.productPrice}>$47.00</Text>
         </View>
@@ -91,13 +91,13 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       {/* Footer */}
       <View style={styles.footer}>
         <TouchableOpacity>
-          <Image source={require("src/assets/Home.png")} style={styles.footerIcon} />
+          <Image source={require("src/assets/icons/Home.png")} style={styles.footerIcon} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image source={require("src/assets/FaceID.png")} style={styles.footerIcon} />
+          <Image source={require("src/assets/icons/FaceID.png")} style={styles.footerIcon} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image source={require("src/assets/Settings.png")} style={styles.footerIcon} />
+          <Image source={require("src/assets/icons/Settings.png")} style={styles.footerIcon} />
         </TouchableOpacity>
       </View>
     </ScrollView>

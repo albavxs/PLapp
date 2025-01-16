@@ -27,4 +27,11 @@
    ```bash
    npm install
    ```
+   
+6. **Dependências da API **: Instale as dependências com:
+   ```bash
+   npm install express
+   npm install axios
+   ```
+
 
