@@ -3,21 +3,18 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "#1E1E1E",
   },
-  header: {
-    fontSize: 24,
-    fontWeight: "bold",
-    margin: 16,
-  },
+ 
   list: {
+    marginTop: 30,
     paddingHorizontal: 16,
   },
   row: {
     justifyContent: "space-between",
   },
   card: {
-    backgroundColor: "#fff",
+    backgroundColor: "#EBEBDE",
     borderRadius: 8,
     padding: 16,
     alignItems: "center",
@@ -26,10 +23,11 @@ export const styles = StyleSheet.create({
     marginHorizontal: 8,
   },
   image: {
-    width: 80,
-    height: 80,
+    width: '100%',
+    height: 150,
     borderRadius: 8,
     marginBottom: 8,
+    resizeMode: 'contain'
   },
   name: {
     fontSize: 14,

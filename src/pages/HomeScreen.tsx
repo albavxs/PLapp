@@ -1,10 +1,16 @@
 import React from "react";
-import { View, Text, TextInput, Image, ScrollView, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList } from "../../App"; // Importe os tipos das rotas
+import { RootStackParamList } from "../../App"; // Ajuste para suas rotas
 import styles from "../Styles/HomeScreenStyles";
 
-// Tipagem da navegação
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "HomeScreen">;
 
 type Props = {
@@ -13,7 +19,7 @@ type Props = {
 
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
-    <View style={styles.container}>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
       {/* Header */}
       <View style={styles.header}>
         <TouchableOpacity>
@@ -27,7 +33,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       {/* Search Bar */}
       <View style={styles.searchBar}>
         <Image source={require("src/assets/search.png")} style={styles.searchIcon} />
-        <TextInput style={styles.searchInput} placeholder="Search" placeholderTextColor="#AAA" />
+        <TextInput style={styles.searchInput} placeholder="Search" placeholderTextColor="#272727" />
       </View>
 
       {/* Categories */}
@@ -37,51 +43,49 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
           <Text style={styles.seeAll}>See All</Text>
         </TouchableOpacity>
       </View>
-      <ScrollView horizontal style={styles.categories}>
-        <TouchableOpacity
-          onPress={() => navigation.navigate("CatalogScreen")} // Navega para a tela CatalogScreen
-        >
+
+      <View style={styles.categories}>
+        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreen")}>
           <View style={styles.category}>
             <Image source={require("src/assets/cabelo.png")} style={styles.categoryImage} />
-            <Text style={styles.categoryText}>Cabelo</Text>
+            <Text style={styles.categoryText}>Cabelo</Text> 
           </View>
         </TouchableOpacity>
         <View style={styles.category}>
           <Image source={require("src/assets/barba.png")} style={styles.categoryImage} />
           <Text style={styles.categoryText}>Barba</Text>
         </View>
-      </ScrollView>
+      </View>
 
+      {/* Top Selling */}
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Top Selling</Text>
         <TouchableOpacity>
           <Text style={styles.seeAll}>See All</Text>
         </TouchableOpacity>
       </View>
-
       <View style={styles.products}>
         <View style={styles.product}>
           <Image source={require("src/assets/2.png")} style={styles.productImage} />
           <Text style={styles.productName}>Shampoo para Barba</Text>
-          <View style={styles.productPriceContainer}>
-            <Text style={styles.productPrice}>$47.00</Text>
-          </View>
+          <Text style={styles.productPrice}>$47.00</Text>
         </View>
         <View style={styles.product}>
           <Image source={require("src/assets/1.png")} style={styles.productImage} />
           <Text style={styles.productName}>Espuma de Barbear</Text>
-          <View style={styles.productPriceContainer}>
-            <Text style={styles.productOldPrice}>$100.97</Text>
-            <Text style={styles.productPrice}>$35.00</Text>
-          </View>
+          <Text style={styles.productPrice}>$35.00</Text>
         </View>
-      </View>
-
-      <View style={styles.section}>
-        <Text style={styles.sectionTitle}>New in</Text>
-        <TouchableOpacity>
-          <Text style={styles.seeAll}>See All</Text>
-        </TouchableOpacity>
+        <View style={styles.product}>
+          <Image source={require("src/assets/2.png")} style={styles.productImage} />
+          <Text style={styles.productName}>Shampoo para Barba</Text>
+          <Text style={styles.productPrice}>$47.00</Text>
+        </View>
+        <View style={styles.product}>
+          <Image source={require("src/assets/2.png")} style={styles.productImage} />
+          <Text style={styles.productName}>Shampoo para Barba</Text>
+          <Text style={styles.productPrice}>$47.00</Text>
+        </View>
+        
       </View>
 
       {/* Footer */}
@@ -96,7 +100,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
           <Image source={require("src/assets/Settings.png")} style={styles.footerIcon} />
         </TouchableOpacity>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

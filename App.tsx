@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import SplashScreen from "./src/pages/SplashScreen";
 import HomeScreen from "./src/pages/HomeScreen";
-import CatalogScreen from "./src/pages/CatalogScreen";
+import CatalogScreen from "./src/pages/CatalogScreenHair";
 
 // Tipos das rotas
 export type RootStackParamList = {
@@ -41,7 +41,7 @@ const App = () => {
         <Stack.Screen
           name="CatalogScreen"
           component={CatalogScreen}
-          options={{ title: "Cabelo", headerStyle: { backgroundColor: "#f9f9f9" } }}
+          options={{ title: "Cabelo (3)", headerStyle: { backgroundColor: "#f9f9f9" } }}
         />
       </Stack.Navigator>
     </NavigationContainer>
