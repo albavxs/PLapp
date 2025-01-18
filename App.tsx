@@ -19,7 +19,7 @@ export type RootStackParamList = {
   CreateAccountScreen: undefined;
   EmailConfirmationScreen: undefined;
   RecoverPassword: undefined;
-  CatalogScreenBeard: undefined; 
+  CatalogScreenBeard: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
