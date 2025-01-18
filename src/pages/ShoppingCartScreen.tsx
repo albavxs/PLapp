@@ -23,24 +23,24 @@ const CartScreen: React.FC<Props> = ({ navigation }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([
     {
       id: 1,
-      name: "Monitor Gamer Curvo 49 DQHD, 240Hz, 1ms, HDMI",
+      name: "",
       price: 8599.9,
       quantity: 1,
-      image: require("src/assets/images/monitor.png"),
+      image: require(""),
     },
     {
       id: 2,
-      name: "Cadeira Gamer RGB - Preta com Iluminação (Led)",
+      name: "",
       price: 959.9,
       quantity: 1,
-      image: require("src/assets/images/cadeira.png"),
+      image: require(""),
     },
     {
       id: 3,
       name: "Teclado Gamer Mecânico Low Profile RGB AW510K 580",
       price: 1002.0,
       quantity: 1,
-      image: require("src/assets/images/teclado.png"),
+      image: require(""),
     },
   ]);
 

@@ -11,23 +11,33 @@ import LoginScreen from "./src/pages/LoginScreen";
 import CreateAccountScreen from "./src/pages/CreateAccountScreen";
 import RecoverPassword from "./src/pages/RecoverPassword";
 import ShoppingCart from "./src/pages/ShoppingCartScreen";
+import ProductScreen from "./src/pages/ProductScreenHair";
 
 
 // Tipos para navegação
 export type RootStackParamList = {
   HomeScreen: undefined;
   CatalogScreenHair: undefined;
+  CatalogScreenBeard: undefined;
   LoginScreen: undefined;
   CreateAccountScreen: undefined;
-  EmailConfirmationScreen: undefined;
   RecoverPassword: undefined;
-  CatalogScreenBeard: undefined;
   ShoppingCart: undefined;
+  ProductScreen: { product: Product }; 
+
+};
+
+// Tipo de produto (ajuste conforme necessário)
+export type Product = {
+  id: string;
+  name: string;
+  price: string;
+  image: any; // Ajuste para um tipo mais específico se necessário
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-const App = () => {
+const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   // Carregando a fonte
@@ -89,18 +99,22 @@ const App = () => {
           component={RecoverPassword}
           options={{ title: "Recover Password" }}
         />
-
         <Stack.Screen
           name="ShoppingCart"
           component={ShoppingCart}
           options={{ title: "Shopping Cart" }}
         />
+        <Stack.Screen
+          name="ProductScreen"
+          component={ProductScreen}
+          options={{ title: "Product Details" }}
+        />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
-// Estilo base
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -108,5 +122,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// Exporta o App
 export default App;
