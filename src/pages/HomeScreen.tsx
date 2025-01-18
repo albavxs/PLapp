@@ -27,7 +27,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
           <Image source={require("src/assets/icons/Account.png")} style={styles.icon} />
         </TouchableOpacity>
         <TouchableOpacity>
-          <Image source={require("src/assets/images/Bag.png")} style={styles.icon} />
+          <Image source={require("src/assets/icons/Bag.png")} style={styles.icon} />
         </TouchableOpacity>
       </View>
 
@@ -52,10 +52,12 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
             <Text style={styles.categoryText}>Cabelo</Text>
           </View>
         </TouchableOpacity>
-        <View style={styles.category}>
-          <Image source={require("src/assets/images/barba.png")} style={styles.categoryImage} />
-          <Text style={styles.categoryText}>Barba</Text>
-        </View>
+        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenBeard")}>
+          <View style={styles.category}>
+            <Image source={require("src/assets/images/barba.png")} style={styles.categoryImage} />
+            <Text style={styles.categoryText}>Barba</Text>
+          </View>
+        </TouchableOpacity>
       </View>
 
       {/* Top Selling */}

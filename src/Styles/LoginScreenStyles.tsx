@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   },
   input: {
     width: "100%",
-   backgroundColor:"#F4F4F4",
+    backgroundColor: "#F4F4F4",
     padding: 15,
     borderWidth: 1,
     borderColor: "#ccc",
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderWidth: 1,
     borderColor: "#ccc",
-    backgroundColor:"#F4F4F4",
+    backgroundColor: "#F4F4F4",
     borderRadius: 20,
     flexDirection: "row", // Adicionado para alinhar o ícone e o texto horizontalmente
     alignItems: "center",  // Garantir que o ícone e o texto fiquem alinhados

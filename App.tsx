@@ -1,32 +1,43 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
+import { useFonts } from "expo-font";  // Importando o hook do expo-font
 import SplashScreen from "./src/pages/SplashScreen";
 import HomeScreen from "./src/pages/HomeScreen";
 import CatalogScreen from "./src/pages/CatalogScreenHair";
-import LoginScreen from "./src/pages/LoginScreen"; // Import da nova tela de login
+import CatalogScreenBeard from "./src/pages/CatalogScreenBeard";
+import LoginScreen from "./src/pages/LoginScreen"; // Tela de Login
+import CreateAccountScreen from "./src/pages/CreateAccountScreen"; // Tela de Criar Conta
+import RecoverPassword from "./src/pages/RecoverPassword"; // Tela de Recuperação de Senha
 
-// Tipos das rotas
+
 export type RootStackParamList = {
   HomeScreen: undefined;
   CatalogScreen: undefined;
-  LoginScreen: undefined; // Adicionado LoginScreen ao tipo
+  LoginScreen: undefined;
+  CreateAccountScreen: undefined;
+  EmailConfirmationScreen: undefined;
+  RecoverPassword: undefined;
+  CatalogScreenBeard: undefined; 
 };
 
-// Criação do navegador de pilha
 const Stack = createStackNavigator<RootStackParamList>();
 
-// Componente Principal do App
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  // Usando o hook useFonts para carregar a fonte personalizada
+  const [fontsLoaded] = useFonts({
+    'Alata': require('./src/assets/fonts/Alata-Regular.ttf'), // Font personalizada
+  });
 
   useEffect(() => {
     const timeout = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timeout);
   }, []);
 
-  if (isLoading) {
+  if (!fontsLoaded || isLoading) {
     return (
       <SafeAreaView style={styles.container}>
         <SplashScreen />
@@ -36,7 +47,14 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: { backgroundColor: "#f9f9f9" },
+          headerTintColor: "#000",
+          headerTitleStyle: { fontWeight: "bold", fontFamily: 'Alata' }, // Aplicando a fonte personalizada ao título
+          ...TransitionPresets.SlideFromRightIOS,
+        }}
+      >
         <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
@@ -45,19 +63,29 @@ const App = () => {
         <Stack.Screen
           name="CatalogScreen"
           component={CatalogScreen}
-          options={{
-            title: "Cabelo (3)",
-            headerStyle: { backgroundColor: "#f9f9f9" },
-          }}
+          options={{ title: "Hair (3)" }}
+        />
+        <Stack.Screen
+          name="CatalogScreenBeard"
+          component={CatalogScreenBeard}
+          options={{ title: "Beard (3)" }}
         />
         <Stack.Screen
           name="LoginScreen"
-          component={LoginScreen} // Adicionado LoginScreen como rota
-          options={{
-            title: "Login",
-            headerStyle: { backgroundColor: "#f9f9f9" },
-          }}
+          component={LoginScreen}
+          options={{ title: "Login" }}
         />
+        <Stack.Screen
+          name="CreateAccountScreen"
+          component={CreateAccountScreen}
+          options={{ title: "Create Account" }}
+        />
+        <Stack.Screen
+          name="RecoverPassword"
+          component={RecoverPassword}
+          options={{ title: "Recover Password" }}
+        />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -67,6 +95,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+  },
+  text: {
+    fontFamily: 'Alata', // Aplicando a fonte personalizada ao texto
+    fontSize: 18,
   },
 });
 

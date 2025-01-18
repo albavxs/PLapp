@@ -1,14 +1,13 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
-import styles from "../Styles/LoginScreenStyles"; // Caminho para o arquivo de estilos
-import Icon from 'react-native-vector-icons/FontAwesome'; // Importar os ícones
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import styles from "../Styles/LoginScreenStyles";
+import Icon from "react-native-vector-icons/FontAwesome";
+import { useNavigation, NavigationProp } from "@react-navigation/native";
+import { RootStackParamList } from "../../App"; // Importa o tipo das rotas
 
 const LoginScreen: React.FC = () => {
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Sign in</Text>
@@ -29,11 +28,13 @@ const LoginScreen: React.FC = () => {
 
       <View style={styles.linksContainer}>
         <Text style={styles.linkText}>Don't have an Account?</Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("CreateAccountScreen")}>
           <Text style={styles.link}> Create One</Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity>
+      
+      {/* Adicionando navegação para a tela de recuperação de senha */}
+      <TouchableOpacity onPress={() => navigation.navigate("RecoverPassword")}>
         <Text style={styles.link}>Forgot Password? Reset</Text>
       </TouchableOpacity>
 
