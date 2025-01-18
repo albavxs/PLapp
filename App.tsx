@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
-import { useFonts } from "expo-font";  // Importando o hook do expo-font
+import { useFonts } from "expo-font";
 import SplashScreen from "./src/pages/SplashScreen";
 import HomeScreen from "./src/pages/HomeScreen";
-import CatalogScreen from "./src/pages/CatalogScreenHair";
+import CatalogScreenHair from "./src/pages/CatalogScreenHair";
 import CatalogScreenBeard from "./src/pages/CatalogScreenBeard";
-import LoginScreen from "./src/pages/LoginScreen"; // Tela de Login
-import CreateAccountScreen from "./src/pages/CreateAccountScreen"; // Tela de Criar Conta
-import RecoverPassword from "./src/pages/RecoverPassword"; // Tela de Recuperação de Senha
+import LoginScreen from "./src/pages/LoginScreen";
+import CreateAccountScreen from "./src/pages/CreateAccountScreen";
+import RecoverPassword from "./src/pages/RecoverPassword";
+import ShoppingCart from "./src/pages/ShoppingCartScreen";
 
 
+// Tipos para navegação
 export type RootStackParamList = {
   HomeScreen: undefined;
-  CatalogScreen: undefined;
+  CatalogScreenHair: undefined;
   LoginScreen: undefined;
   CreateAccountScreen: undefined;
   EmailConfirmationScreen: undefined;
   RecoverPassword: undefined;
   CatalogScreenBeard: undefined;
+  ShoppingCart: undefined;
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -27,11 +30,12 @@ const Stack = createStackNavigator<RootStackParamList>();
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Usando o hook useFonts para carregar a fonte personalizada
+  // Carregando a fonte
   const [fontsLoaded] = useFonts({
-    'Alata': require('./src/assets/fonts/Alata-Regular.ttf'), // Font personalizada
+    "Alata-Regular": require("./src/assets/fonts/Alata-Regular.ttf"),
   });
 
+  // Simulando splash screen
   useEffect(() => {
     const timeout = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timeout);
@@ -51,7 +55,7 @@ const App = () => {
         screenOptions={{
           headerStyle: { backgroundColor: "#f9f9f9" },
           headerTintColor: "#000",
-          headerTitleStyle: { fontWeight: "bold", fontFamily: 'Alata' }, // Aplicando a fonte personalizada ao título
+          headerTitleStyle: { fontWeight: "bold", fontFamily: "Alata-Regular" },
           ...TransitionPresets.SlideFromRightIOS,
         }}
       >
@@ -61,8 +65,8 @@ const App = () => {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="CatalogScreen"
-          component={CatalogScreen}
+          name="CatalogScreenHair"
+          component={CatalogScreenHair}
           options={{ title: "Hair (3)" }}
         />
         <Stack.Screen
@@ -86,20 +90,23 @@ const App = () => {
           options={{ title: "Recover Password" }}
         />
 
+        <Stack.Screen
+          name="ShoppingCart"
+          component={ShoppingCart}
+          options={{ title: "Shopping Cart" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
+// Estilo base
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
   },
-  text: {
-    fontFamily: 'Alata', // Aplicando a fonte personalizada ao texto
-    fontSize: 18,
-  },
 });
 
+// Exporta o App
 export default App;

@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native'; // Importa useNavigati
 import { NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from '../../App'; // Importa o tipo de rotas
 import styles from '../Styles/CreateAccountStyles';
+import CustomText from "../components/CustomText";
 
 const CreateAccountScreen: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
@@ -15,7 +16,7 @@ const CreateAccountScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Create Account</Text>
+      <CustomText style={styles.title}>Create Account</CustomText>
       
       <TextInput style={styles.input} placeholder="Firstname" placeholderTextColor="#666" />
       <TextInput style={styles.input} placeholder="Lastname" placeholderTextColor="#666" />
@@ -30,7 +31,7 @@ const CreateAccountScreen: React.FC = () => {
       />
       
       <TouchableOpacity style={styles.button} onPress={handleContinue}>
-        <Text style={styles.buttonText}>Continue</Text>
+        <CustomText style={styles.buttonText}>Continue</CustomText>
       </TouchableOpacity>
     </View>
   );

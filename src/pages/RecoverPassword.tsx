@@ -3,6 +3,7 @@ import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import styles from "../Styles/RecoverPasswordStyles"; // Caminho para o arquivo de estilo
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "../../App"; // Importa o tipo das rotas
+import CustomText from "../components/CustomText";
 
 const RecuperarSenhaScreen: React.FC = () => {
   const [email, setEmail] = useState<string>("");
@@ -27,7 +28,7 @@ const RecuperarSenhaScreen: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Recuperar Senha</Text>
+      <CustomText style={styles.title}>Recuperar Senha</CustomText>
       <TextInput
         style={styles.input}
         placeholder="Digite seu e-mail"
@@ -41,13 +42,13 @@ const RecuperarSenhaScreen: React.FC = () => {
         onPress={handleSubmit}
         disabled={isLoading}
       >
-        <Text style={styles.buttonText}>
+        <CustomText style={styles.buttonText}>
           {isLoading ? "Enviando..." : "Enviar"}
-        </Text>
+        </CustomText>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text style={styles.link}>Voltar para o Login</Text>
+        <CustomText style={styles.link}>Voltar para o Login</CustomText>
       </TouchableOpacity>
     </View>
   );

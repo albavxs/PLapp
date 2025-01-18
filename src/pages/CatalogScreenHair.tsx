@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
 import { styles } from "../Styles/CatalogScreenHairStyles";
+import CustomText from "../components/CustomText";
 
 const products = [
   {
@@ -29,8 +30,8 @@ const CatalogScreen = () => {
     <TouchableOpacity style={styles.card}>
       {/* Carregando imagens locais diretamente com require */}
       <Image source={item.image} style={styles.image} />
-      <Text style={styles.name}>{item.name}</Text>
-      <Text style={styles.price}>{item.price}</Text>
+      <CustomText style={styles.name}>{item.name}</CustomText>
+      <CustomText style={styles.price}>{item.price}</CustomText>
     </TouchableOpacity>
   );
 

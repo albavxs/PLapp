@@ -11,6 +11,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../App"; // Ajuste para suas rotas
 import styles from "../Styles/HomeScreenStyles";
 import Icon from "react-native-vector-icons/Ionicons"; // Import do conjunto Ionicons
+import CustomText from "../components/CustomText";
 
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "HomeScreen">;
 
@@ -26,9 +27,10 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
           <Image source={require("src/assets/icons/Account.png")} style={styles.icon} />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ShoppingCart")}>
           <Image source={require("src/assets/icons/Bag.png")} style={styles.icon} />
         </TouchableOpacity>
+
       </View>
 
       {/* Search Bar */}
@@ -39,39 +41,36 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
 
       {/* Categories */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Categories</Text>
-        <TouchableOpacity>
-          <Text style={styles.seeAll}>See All</Text>
-        </TouchableOpacity>
+        <CustomText style={styles.sectionTitle}>Categories</CustomText>
       </View>
 
       <View style={styles.categories}>
-        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreen")}>
+        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenHair")}>
           <View style={styles.category}>
             <Image source={require("src/assets/images/cabelo.png")} style={styles.categoryImage} />
-            <Text style={styles.categoryText}>Cabelo</Text>
+            <CustomText style={styles.categoryText}>Cabelo</CustomText>
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenBeard")}>
           <View style={styles.category}>
             <Image source={require("src/assets/images/barba.png")} style={styles.categoryImage} />
-            <Text style={styles.categoryText}>Barba</Text>
+            <CustomText style={styles.categoryText}>Barba</CustomText>
           </View>
         </TouchableOpacity>
       </View>
 
       {/* Top Selling */}
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Top Selling</Text>
+        <CustomText style={styles.sectionTitle}>Top Selling</CustomText>
         <TouchableOpacity>
-          <Text style={styles.seeAll}>See All</Text>
+          <CustomText style={styles.seeAll}>See All</CustomText>
         </TouchableOpacity>
       </View>
       <View style={styles.products}>
         <View style={styles.product}>
           <Image source={require("src/assets/images/2.png")} style={styles.productImage} />
-          <Text style={styles.productName}>Shampoo para Barba</Text>
-          <Text style={styles.productPrice}>$47.00</Text>
+          <CustomText style={styles.productName}>Shampoo para Barba</CustomText>
+          <CustomText style={styles.productPrice}>$47.00</CustomText>
         </View>
         <View style={styles.product}>
           <Image source={require("src/assets/images/1.png")} style={styles.productImage} />
@@ -80,13 +79,13 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         </View>
         <View style={styles.product}>
           <Image source={require("src/assets/images/2.png")} style={styles.productImage} />
-          <Text style={styles.productName}>Shampoo para Barba</Text>
-          <Text style={styles.productPrice}>$47.00</Text>
+          <CustomText style={styles.productName}>Shampoo para Barba</CustomText>
+          <CustomText style={styles.productPrice}>$47.00</CustomText>
         </View>
         <View style={styles.product}>
           <Image source={require("src/assets/images/2.png")} style={styles.productImage} />
-          <Text style={styles.productName}>Shampoo para Barba</Text>
-          <Text style={styles.productPrice}>$47.00</Text>
+          <CustomText style={styles.productName}>Shampoo para Barba</CustomText>
+          <CustomText style={styles.productPrice}>$47.00</CustomText>
         </View>
       </View>
 
@@ -95,10 +94,10 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
           <Icon name="home-outline" size={24} color="#fff" />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreen")}>
+        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenHair")}>
           <Icon name="person-outline" size={24} color="#fff" />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreen")}>
+        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenHair")}>
           <Icon name="settings-outline" size={24} color="#fff" />
         </TouchableOpacity>
       </View>

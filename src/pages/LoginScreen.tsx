@@ -4,13 +4,14 @@ import styles from "../Styles/LoginScreenStyles";
 import Icon from "react-native-vector-icons/FontAwesome";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "../../App"; // Importa o tipo das rotas
+import CustomText from "../components/CustomText"; // importa a font
 
 const LoginScreen: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sign in</Text>
+      <CustomText style={styles.title}>Sign in</CustomText>
       <TextInput
         style={styles.input}
         placeholder="Email Address"
@@ -23,33 +24,33 @@ const LoginScreen: React.FC = () => {
         secureTextEntry
       />
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Continue</Text>
+        <CustomText style={styles.buttonText}>Continue</CustomText>
       </TouchableOpacity>
 
       <View style={styles.linksContainer}>
-        <Text style={styles.linkText}>Don't have an Account?</Text>
+        <CustomText style={styles.linkText}>Don't have an Account?</CustomText>
         <TouchableOpacity onPress={() => navigation.navigate("CreateAccountScreen")}>
-          <Text style={styles.link}> Create One</Text>
+          <CustomText style={styles.link}> Create One</CustomText>
         </TouchableOpacity>
       </View>
       
       {/* Adicionando navegação para a tela de recuperação de senha */}
       <TouchableOpacity onPress={() => navigation.navigate("RecoverPassword")}>
-        <Text style={styles.link}>Forgot Password? Reset</Text>
+        <CustomText style={styles.link}>Forgot Password? Reset</CustomText>
       </TouchableOpacity>
 
       <View style={styles.socialButtons}>
         <TouchableOpacity style={styles.socialButton}>
           <Icon name="apple" size={20} color="#000" />
-          <Text style={styles.socialButtonText}>Continue With Apple</Text>
+          <CustomText style={styles.socialButtonText}>Continue With Apple</CustomText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.socialButton}>
           <Icon name="google" size={20} color="#DB4437" />
-          <Text style={styles.socialButtonText}>Continue With Google</Text>
+          <CustomText style={styles.socialButtonText}>Continue With Google</CustomText>
         </TouchableOpacity>
         <TouchableOpacity style={styles.socialButton}>
           <Icon name="facebook" size={20} color="#3b5998" />
-          <Text style={styles.socialButtonText}>Continue With Facebook</Text>
+          <CustomText style={styles.socialButtonText}>Continue With Facebook</CustomText>
         </TouchableOpacity>
       </View>
     </View>
