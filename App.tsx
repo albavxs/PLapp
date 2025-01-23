@@ -42,7 +42,7 @@ const App: React.FC = () => {
 
   // Carregando a fonte
   const [fontsLoaded] = useFonts({
-    "Alata-Regular": require("./src/assets/fonts/Alata-Regular.ttf"),
+    "Alata-Regular": require("./src/assets/Fonts/Alata-Regular.ttf"),
   });
 
   // Simulando splash screen
