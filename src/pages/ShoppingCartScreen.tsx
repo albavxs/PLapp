@@ -4,6 +4,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../App"; // Ajuste para suas rotas
 import Icon from "react-native-vector-icons/Ionicons";
 import styles from "../Styles/ShoppingCartScreenStyles";
+import CustomText from "src/components/CustomText";
 
 interface CartItem {
   id: number;
@@ -26,18 +27,18 @@ const CartScreen: React.FC<Props> = ({ navigation }) => {
       name: "",
       price: 8599.9,
       quantity: 1,
-      image: require(""),
+      image: require("../assets/images/ShampooHair.png"),
     },
     {
       id: 2,
       name: "",
       price: 959.9,
       quantity: 1,
-      image: require(""),
+      image: require("../assets/images/HairCareKit.png"),
     },
     {
       id: 3,
-      name: "Teclado Gamer Mecânico Low Profile RGB AW510K 580",
+      name: "",
       price: 1002.0,
       quantity: 1,
       image: require(""),
@@ -70,15 +71,15 @@ const CartScreen: React.FC<Props> = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Icon name="arrow-back-outline" size={24} color="#000" />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Carrinho</Text>
+        <CustomText style={styles.headerTitle}>Carrinho</CustomText>
       </View>
 
       {cartItems.map((item) => (
         <View key={item.id} style={styles.itemContainer}>
           <Image source={item.image} style={styles.itemImage} />
           <View style={styles.itemDetails}>
-            <Text style={styles.itemName}>{item.name}</Text>
-            <Text style={styles.itemPrice}>R$ {item.price.toFixed(2)}</Text>
+            <CustomText style={styles.itemName}>{item.name}</CustomText>
+            <CustomText style={styles.itemPrice}>R$ {item.price.toFixed(2)}</CustomText>
           </View>
           <View style={styles.itemActions}>
             <TouchableOpacity
@@ -87,24 +88,24 @@ const CartScreen: React.FC<Props> = ({ navigation }) => {
             >
               <Text style={styles.actionText}>-</Text>
             </TouchableOpacity>
-            <Text style={styles.quantity}>{item.quantity}</Text>
+            <CustomText style={styles.quantity}>{item.quantity}</CustomText>
             <TouchableOpacity
               style={styles.actionButton}
               onPress={() => handleIncrement(item.id)}
             >
-              <Text style={styles.actionText}>+</Text>
+              <CustomText style={styles.actionText}>+</CustomText>
             </TouchableOpacity>
           </View>
         </View>
       ))}
 
       <View style={styles.totalContainer}>
-        <Text style={styles.totalLabel}>Total:</Text>
-        <Text style={styles.totalValue}>R$ {total}</Text>
+        <CustomText style={styles.totalLabel}>Total:</CustomText>
+        <CustomText style={styles.totalValue}>R$ {total}</CustomText>
       </View>
 
       <TouchableOpacity style={styles.checkoutButton}>
-        <Text style={styles.checkoutText}>Finalizar Compra</Text>
+        <CustomText style={styles.checkoutText}>Finalizar Compra</CustomText>
       </TouchableOpacity>
     </ScrollView>
   );

@@ -15,6 +15,7 @@ export const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: "#EBEBDE",
+    width: 200,
     borderRadius: 8,
     padding: 16,
     alignItems: "center",
@@ -24,7 +25,7 @@ export const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: 150,
+    height: 200,
     borderRadius: 8,
     marginBottom: 8,
     resizeMode: 'contain'

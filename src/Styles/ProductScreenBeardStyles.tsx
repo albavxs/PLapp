@@ -7,26 +7,24 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     alignItems: 'center',
-    marginVertical: 5,
+    marginVertical: 20,
   },
   image: {
-    width: 500,
-    height: 500,
-    resizeMode: "contain"
+    width: 200,
+    height: 200,
+    borderRadius: 10,
   },
   detailsContainer: {
     paddingHorizontal: 20,
   },
   title: {
     fontSize: 22,
-    color: '#F4F4F4',
     fontWeight: 'bold',
-    marginBottom: 5,
-    marginTop: -10,
+    marginBottom: 10,
   },
   price: {
     fontSize: 20,
-    color: '#F4F4F4',
+    color: '#888',
     marginBottom: 20,
   },
   quantityContainer: {
@@ -47,19 +45,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   quantity: {
-    color:'#F4F4F4',
     marginHorizontal: 10,
     fontSize: 18,
   },
   sectionTitle: {
     fontSize: 18,
-    color: '#F4F4F4',
     fontWeight: 'bold',
     marginBottom: 10,
   },
   text: {
     fontSize: 16,
-    color: '#F4F4F4',
+    color: '#555',
     marginBottom: 20,
   },
   reviewContainer: {

@@ -1,47 +1,48 @@
 import React from "react";
-import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { RootStackParamList, Product } from "../../App";
-import { useNavigation } from "@react-navigation/native";
+import { View, FlatList, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native"; // Importando useNavigation
+import { RootStackParamList } from "../../App"; // Importando a definição de tipos
+import { StackNavigationProp } from "@react-navigation/stack"; // Importando StackNavigationProp
 import { styles } from "../Styles/CatalogScreenHairStyles";
+import CustomText from "../components/CustomText";
 
-const products: Product[] = [
+const products = [
   {
     id: "1",
-    name: "Shampoo para Cabelo",
+    name: "Hair Shampoo",
     price: "$40",
-    image: require("../assets/images/ShampCabelo.png"),
+    image: require("../assets/images/ShampooHair.png"), // Caminho local
   },
   {
     id: "2",
-    name: "Kit cuidados com o Cabelo",
+    name: "Hair Care Kit",
     price: "$150",
-    image: require("../assets/images/Kitcabelo.png"),
+    image: require("../assets/images/HairCareKit.png"), // Caminho local
   },
   {
     id: "3",
-    name: "Condicionador",
+    name: "Hair Conditioner",
     price: "$110",
-    image: require("../assets/images/cond.png"),
+    image: require("../assets/images/cond.png"), // Caminho local
   },
 ];
 
-type CatalogScreenHairNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  "CatalogScreenHair"
->;
+// Tipagem para a navegação
+type CatalogScreenNavigationProp = StackNavigationProp<RootStackParamList, "CatalogScreenHair">;
 
-const CatalogScreenHair: React.FC = () => {
-  const navigation = useNavigation<CatalogScreenHairNavigationProp>();
+const CatalogScreenHair = () => {
+  const navigation = useNavigation<CatalogScreenNavigationProp>();
 
-  const renderItem = ({ item }: { item: Product }) => (
+  const renderItem = ({ item }: { item: typeof products[0] }) => (
     <TouchableOpacity
       style={styles.card}
-      onPress={() => navigation.navigate("ProductScreen", { product: item })}
+      onPress={() =>
+        navigation.navigate("ProductScreenHair", { id: item.id }) // Navega para a tela de detalhes e passa o id
+      }
     >
       <Image source={item.image} style={styles.image} />
-      <Text style={styles.name}>{item.name}</Text>
-      <Text style={styles.price}>{item.price}</Text>
+      <CustomText style={styles.name}>{item.name}</CustomText>
+      <CustomText style={styles.price}>{item.price}</CustomText>
     </TouchableOpacity>
   );
 
