@@ -39,7 +39,9 @@ const sendRecoveryToken = async (req, res) => {
     };
 
     // Envia o e-mail
+    console.log("Enviando e-mail para:", email);
     await sgMail.send(msg);
+    console.log("E-mail enviado com sucesso.");
 
     return res.status(200).json({ message: "Token enviado para seu email." });
   } catch (error) {

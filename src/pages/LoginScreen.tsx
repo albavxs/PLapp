@@ -1,51 +1,49 @@
 import React, { useState } from "react";
-import { View, TextInput, TouchableOpacity, ActivityIndicator } from "react-native";
+import { View, TextInput, TouchableOpacity, ActivityIndicator, Alert } from "react-native";
 import styles from "../Styles/LoginScreenStyles";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
-import { RootStackParamList } from "../../App"; // Importa o tipo das rotas
-import CustomText from "../components/CustomText"; // importa a font
+import { RootStackParamList } from "../../App";
+import CustomText from "../components/CustomText";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 const LoginScreen: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
-  // Estados para email, senha e controle de carregamento
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // Adicionado para controle de carregamento
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = async () => {
-    if (!email || !password) {
-      alert("Por favor, preencha todos os campos.");
+    if (!email.trim() || !password.trim()) {
+      Alert.alert("Erro", "Por favor, preencha todos os campos.");
       return;
     }
 
-    setIsLoading(true); // Ativa o carregamento
+    setIsLoading(true);
 
     try {
-      const requestBody = { email, password };
-
       const response = await fetch("http://10.0.2.2:3000/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
-
-      setIsLoading(false); // Desativa o carregamento
+      setIsLoading(false);
 
       if (response.ok) {
-        console.log("Login bem-sucedido:", data);
-        navigation.navigate("HomeScreen");
+        Alert.alert("Sucesso", "Login realizado com sucesso!", [
+          {
+            text: "OK",
+            onPress: () => navigation.navigate("HomeScreen"),
+          },
+        ]);
       } else {
-        console.error("Erro no login:", data.message);
-        alert(data.message || "Erro ao fazer login.");
+        Alert.alert("Erro", data.message || "Erro ao fazer login.");
       }
     } catch (error) {
-      setIsLoading(false); // Desativa o carregamento
-      console.error("Erro de conexão:", error);
-      alert("Erro ao conectar à API.");
+      setIsLoading(false);
+      Alert.alert("Erro", "Falha ao conectar-se à API.");
     }
   };
 
@@ -57,8 +55,9 @@ const LoginScreen: React.FC = () => {
         placeholder="Email Address"
         placeholderTextColor="#666"
         value={email}
-        onChangeText={(text) => setEmail(text)}
-        keyboardType="email-address" // Melhor para email
+        onChangeText={setEmail}
+        keyboardType="email-address"
+        autoCapitalize="none"
       />
       <TextInput
         style={styles.input}
@@ -66,7 +65,7 @@ const LoginScreen: React.FC = () => {
         placeholderTextColor="#666"
         secureTextEntry
         value={password}
-        onChangeText={(text) => setPassword(text)}
+        onChangeText={setPassword}
       />
       <TouchableOpacity style={styles.button} onPress={handleLogin} disabled={isLoading}>
         {isLoading ? (
