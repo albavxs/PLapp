@@ -32,6 +32,14 @@
    ```bash
    npm install express
    npm install axios
+   npm install cors
+   npm install sequelize
+   npm install mysql2
+   npm install bcrypt
+   npm install bcryptjs
+   npm install jsonwebtoken 
+   npm install dotenv
+   npm install @sendgrid/mail
    ```
 
 # API de Autenticação - Documentação

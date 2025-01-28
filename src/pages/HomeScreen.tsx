@@ -40,13 +40,13 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={styles.categories}>
         <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenHair")}>
           <View style={styles.category}>
-            <Image source={require("src/assets/images/cabelo.png")} style={styles.categoryImage} />
+            <Image source={require("src/assets/images/Hair.png")} style={styles.categoryImage} />
             <CustomText style={styles.categoryText}>Hair</CustomText>
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenBeard")}>
           <View style={styles.category}>
-            <Image source={require("src/assets/images/barba.png")} style={styles.categoryImage} />
+            <Image source={require("src/assets/images/Beard.png")} style={styles.categoryImage} />
             <CustomText style={styles.categoryText}>Beard</CustomText>
           </View>
         </TouchableOpacity>
@@ -55,9 +55,6 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       {/* Top Selling */}
       <View style={styles.section}>
         <CustomText style={styles.sectionTitle}>Top Selling</CustomText>
-        <TouchableOpacity>
-          <CustomText style={styles.seeAll}>See All</CustomText>
-        </TouchableOpacity>
       </View>
       <View style={styles.products}>
         <View style={styles.product}>
@@ -66,34 +63,22 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
           <CustomText style={styles.productPrice}>$150.00</CustomText>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/images/1.png")} style={styles.productImage} />
-          <Text style={styles.productName}>Espuma de Barbear</Text>
-          <Text style={styles.productPrice}>$35.00</Text>
+          <Image source={require("src/assets/images/ShavingFoam.png")} style={styles.productImage} />
+          <CustomText style={styles.productName}>Shaving Foam</CustomText>
+          <CustomText style={styles.productPrice}>$35.00</CustomText>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/images/2.png")} style={styles.productImage} />
-          <CustomText style={styles.productName}>Shampoo para Barba</CustomText>
+          <Image source={require("src/assets/images/BeardShampoo.png")} style={styles.productImage} />
+          <CustomText style={styles.productName}>Beard Shampoo</CustomText>
           <CustomText style={styles.productPrice}>$47.00</CustomText>
         </View>
         <View style={styles.product}>
-          <Image source={require("src/assets/images/2.png")} style={styles.productImage} />
-          <CustomText style={styles.productName}>Shampoo para Barba</CustomText>
+          <Image source={require("src/assets/images/ShampooHair.png")} style={styles.productImage} />
+          <CustomText style={styles.productName}>Hair Shampoo</CustomText>
           <CustomText style={styles.productPrice}>$47.00</CustomText>
         </View>
       </View>
 
-      {/* Footer */}
-      <View style={styles.footer}>
-        <TouchableOpacity onPress={() => navigation.navigate("HomeScreen")}>
-          <Icon name="home-outline" size={24} color="#fff" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenHair")}>
-          <Icon name="person-circle-outline" size={30} color="#fff" />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenHair")}>
-          <Icon name="settings-outline" size={24} color="#fff" />
-        </TouchableOpacity>
-      </View>
     </ScrollView>
   );
 };

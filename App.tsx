@@ -13,6 +13,8 @@ import RecoverPassword from "./src/pages/RecoverPassword";
 import ShoppingCart from "./src/pages/ShoppingCartScreen";
 import ProductScreenHair from "./src/pages/ProductScreenHair";
 import ProductScreenBeard from "./src/pages/ProductScreenBeard";
+import TokenScreen from "./src/pages/TokenScreen"; // Importando a tela correta
+import Footer from "./src/components/Footer"; // Importando o footer
 
 // Tipos para navegação
 export type RootStackParamList = {
@@ -23,10 +25,10 @@ export type RootStackParamList = {
   CreateAccountScreen: undefined;
   RecoverPassword: undefined;
   ShoppingCart: undefined;
-  ProductScreenHair: { id: string };  // Espera apenas o ID
-  ProductScreenBeard: { id: string };// Espera apenas o ID
+  ProductScreenHair: { id: string };
+  ProductScreenBeard: { id: string };
+  TokenScreen: { email: string }; // Definindo corretamente o parâmetro
 };
-
 
 // Tipo de produto
 export type Product = {
@@ -89,7 +91,7 @@ const App: React.FC = () => {
         <Stack.Screen
           name="CatalogScreenBeard"
           component={CatalogScreenBeard}
-          options={{ title: "Beard (3) " }}
+          options={{ title: "Beard (3)" }}
         />
 
         {/* Tela de login */}
@@ -103,7 +105,7 @@ const App: React.FC = () => {
         <Stack.Screen
           name="CreateAccountScreen"
           component={CreateAccountScreen}
-          options={{ title: "CreateAccont" }}
+          options={{ title: "Create Account" }}
         />
 
         {/* Tela de recuperação de senha */}
@@ -117,7 +119,7 @@ const App: React.FC = () => {
         <Stack.Screen
           name="ShoppingCart"
           component={ShoppingCart}
-          options={{ title: "Shopping Cart " }}
+          options={{ title: "Shopping Cart" }}
         />
 
         {/* Tela de detalhes do produto para cabelo */}
@@ -133,7 +135,17 @@ const App: React.FC = () => {
           component={ProductScreenBeard}
           options={{ title: "Product Detail" }}
         />
+
+        {/* Tela do token */}
+        <Stack.Screen
+          name="TokenScreen"
+          component={TokenScreen}
+          options={{ title: "Token Screen" }}
+        />
       </Stack.Navigator>
+
+      {/* Adiciona o Footer abaixo da navegação */}
+      <Footer />
     </NavigationContainer>
   );
 };
