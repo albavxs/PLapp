@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   icon: {
-    width: 24,
-    height: 24,
+    width: 30,
+    height: 30,
     marginTop: 60,
   },
   searchBar: {
@@ -60,56 +60,60 @@ const styles = StyleSheet.create({
     marginRight: 16,
   },
   categoryImage: {
-    width: 64,
-    height: 64,
+    width: 80,
+    height: 80,
     marginBottom: 8,
   },
   categoryText: {
     fontSize: 14,
     color: "#FFFFFF"
-
   },
   products: {
-    flexDirection: "row", // Alinha os itens em linha
-    flexWrap: "wrap", // Permite que os itens que não cabem na linha quebrem para a próxima
-    justifyContent: "space-between", // Adiciona espaço uniforme entre os itens
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
     marginBottom: 30,
-
   },
   product: {
     backgroundColor: "#EBEBDE",
     borderRadius: 8,
-    padding: 16,
+    padding: 20,
     alignItems: "center",
     marginBottom: 16,
-    width: (width - 60) / 2, // Divide a largura da tela para caber dois cards lado a lado, considerando margens
-    marginHorizontal: 5, // Adiciona um pequeno espaçamento horizontal entre os cards
+    width: (width / 2) - 30, // Ajusta para melhor encaixe na tela
+    marginHorizontal: 5,
   },
   productImage: {
-    width: 80,
-    height: 80,
-    marginBottom: 8,
+    width: '100%',
+    height: 200,
+    marginBottom: 10,
+    resizeMode: 'contain',
   },
   productName: {
-    fontSize: 14,
+    fontSize: 16,
     textAlign: "center",
     marginBottom: 4,
   },
   productPrice: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
     color: "#000",
   },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: "space-around",
-    marginHorizontal: -70,
-    marginTop: 10,
+
+  productsContainer: {
+    flex: 1,
+    paddingBottom: 20,
   },
-  footerIcon: {
-    width: 35,
-    height: 35,
+  
+  productsRow: {
+    justifyContent: "space-between",
   },
+  
+  productsList: {
+    paddingBottom: 30,
+  },
+  
+  
 });
 
 export default styles;

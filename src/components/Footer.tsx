@@ -36,13 +36,13 @@ const Footer: React.FC = () => {
 const styles = StyleSheet.create({
   footer: {
     position: 'absolute',
-    bottom: 0,
+    bottom: 1,
     width: '100%',
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    padding: 10,
+    justifyContent: 'space-between',
+    padding: 25,
     backgroundColor: '#1E1E1E',
-    zIndex: 1,
+
   },
 });
 
