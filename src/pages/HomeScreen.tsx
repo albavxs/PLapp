@@ -20,7 +20,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
         <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
           <Image source={require("src/assets/icons/Account.png")} style={styles.icon} />
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("ShoppingCart")}>
+        <TouchableOpacity onPress={() => navigation.navigate("CartScreen")}>
           <Image source={require("src/assets/icons/Bag.png")} style={styles.icon} />
         </TouchableOpacity>
 

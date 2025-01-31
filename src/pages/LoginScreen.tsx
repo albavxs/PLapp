@@ -88,10 +88,6 @@ const LoginScreen: React.FC = () => {
 
       <View style={styles.socialButtons}>
         <TouchableOpacity style={styles.socialButton}>
-          <Icon name="apple" size={20} color="#000" />
-          <CustomText style={styles.socialButtonText}>Continue With Apple</CustomText>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.socialButton}>
           <Icon name="google" size={20} color="#DB4437" />
           <CustomText style={styles.socialButtonText}>Continue With Google</CustomText>
         </TouchableOpacity>

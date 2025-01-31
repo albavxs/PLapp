@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList, ListRenderItem } from 'react-native';
 import { useRoute, RouteProp } from '@react-navigation/native';
-import styles from '../Styles/ProductScreenHairStyles';
+import styles from '../Styles/ProductScreenHairStyles'
 import CustomText from 'src/components/CustomText';
 import { RootStackParamList } from '../../App'; // Importe seu RootStackParamList aqui
 
@@ -33,26 +33,26 @@ const reviews: Review[] = [
 const products = [
   {
     id: '1',
-    name: "Hair Shampoo",
+    name: "Shampoo para Cabelo",
     price: "$40",
     image: require('../assets/images/ShampooHair.png'),
   },
   {
     id: '2',
-    name: "Hair Care Kit",
+    name: "Kit cuidados com o Cabelo",
     price: "$150",
     image: require('../assets/images/HairCareKit.png'),
   },
   {
     id: '3',
-    name: "Hair Conditioner",
+    name: "Condicionador",
     price: "$110",
     image: require('../assets/images/cond.png'),
   },
 ];
 
 const ProductScreenHair: React.FC = () => {
-  const route = useRoute<RouteProp<RootStackParamList, 'ProductScreenHair'>>(); // Defina o tipo correto para a rota
+  const route = useRoute<RouteProp<RootStackParamList, 'ProductScreenBeard'>>(); // Defina o tipo correto para a rota
   const { id } = route.params; // Agora o TypeScript sabe que 'id' é uma string
 
   const [product, setProduct] = useState<typeof products[0] | null>(null);

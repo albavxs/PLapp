@@ -10,7 +10,6 @@ import CatalogScreenBeard from "./src/pages/CatalogScreenBeard";
 import LoginScreen from "./src/pages/LoginScreen";
 import CreateAccountScreen from "./src/pages/CreateAccountScreen";
 import RecoverPassword from "./src/pages/RecoverPassword";
-import ShoppingCart from "./src/pages/ShoppingCartScreen";
 import ProductScreenHair from "./src/pages/ProductScreenHair";
 import ProductScreenBeard from "./src/pages/ProductScreenBeard";
 import TokenScreen from "./src/pages/TokenScreen"; // Importando a tela correta
@@ -24,7 +23,7 @@ export type RootStackParamList = {
   LoginScreen: undefined;
   CreateAccountScreen: undefined;
   RecoverPassword: undefined;
-  ShoppingCart: undefined;
+  CartScreen: undefined;
   ProductScreenHair: { id: string };
   ProductScreenBeard: { id: string };
   TokenScreen: { email: string }; // Definindo corretamente o parâmetro
@@ -114,14 +113,6 @@ const App: React.FC = () => {
           component={RecoverPassword}
           options={{ title: "Recover Password" }}
         />
-
-        {/* Tela do carrinho de compras */}
-        <Stack.Screen
-          name="ShoppingCart"
-          component={ShoppingCart}
-          options={{ title: "Shopping Cart" }}
-        />
-
         {/* Tela de detalhes do produto para cabelo */}
         <Stack.Screen
           name="ProductScreenHair"

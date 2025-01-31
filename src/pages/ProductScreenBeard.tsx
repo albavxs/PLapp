@@ -51,7 +51,7 @@ const products = [
   },
 ];
 
-const ProductScreenHair: React.FC = () => {
+const ProductScreenBeard: React.FC = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'ProductScreenBeard'>>(); // Defina o tipo correto para a rota
   const { id } = route.params; // Agora o TypeScript sabe que 'id' é uma string
 
@@ -133,4 +133,4 @@ const ProductScreenHair: React.FC = () => {
   );
 };
 
-export default ProductScreenHair;
+export default ProductScreenBeard;
