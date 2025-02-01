@@ -32,22 +32,28 @@ const reviews: Review[] = [
 
 const products = [
   {
-    id: '1',
-    name: "Shampoo para Cabelo",
-    price: "$40",
-    image: require('../assets/images/ShampooHair.png'),
-  },
-  {
-    id: '2',
-    name: "Kit cuidados com o Cabelo",
-    price: "$150",
-    image: require('../assets/images/HairCareKit.png'),
-  },
-  {
     id: '3',
-    name: "Condicionador",
-    price: "$110",
-    image: require('../assets/images/cond.png'),
+    name: "Beard Shampoo",
+    price: "$47",
+    image: require('../assets/images/BeardShampoo.png'), // Caminho local
+  },
+  {
+    id: '1',
+    name: "Beard Care Kit",
+    price: "$150",
+    image: require('../assets/images/BeardKitt.png'), // Caminho local
+  },
+  {
+    id: "2",
+    name: "Shaving Foam",
+    price: "$16",
+    image: require('../assets/images/ShavingFoam.png'), // Caminho local
+  },
+  {
+    id: "4",
+    name: "After Shave",
+    price: "$25",
+    image: require("../assets/images/AfterShave.png"), // Caminho local
   },
 ];
 

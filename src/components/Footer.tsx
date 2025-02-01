@@ -40,8 +40,9 @@ const styles = StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    padding: 25,
+    padding: 20,
     backgroundColor: '#1E1E1E',
+    marginBottom: -10,
 
   },
 });

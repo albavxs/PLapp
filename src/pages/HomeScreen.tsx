@@ -14,7 +14,7 @@ type Props = {
 
 const products = [
   { id: "1", name: "Hair Care Kit", price: "$150.00", image: require("../assets/images/HairCareKit.png") },
-  { id: "2", name: "Shaving Foam", price: "$35.00", image: require("../assets/images/ShavingFoam.png") },
+  { id: "2", name: "Shaving Foam", price: "$16.00", image: require("../assets/images/ShavingFoam.png") },
   { id: "3", name: "Beard Shampoo", price: "$47.00", image: require("../assets/images/BeardShampoo.png") },
   { id: "4", name: "Hair Shampoo", price: "$47.00", image: require("../assets/images/ShampooHair.png") },
 ];
@@ -22,7 +22,9 @@ const products = [
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
   const renderItem = ({ item }: { item: typeof products[0] }) => {
     // Verifica para qual tela o produto deve ir
-    const targetScreen = item.id === "1" || item.id === "4" ? "ProductScreenHair" : "ProductScreenBeard";
+    const targetScreen = item.id === "1" || item.id === "4" 
+      ? "ProductScreenHair" as const 
+      : "ProductScreenBeard" as const;
 
     return (
       <TouchableOpacity

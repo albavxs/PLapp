@@ -8,19 +8,25 @@ import CustomText from "../components/CustomText";
 
 const products = [
   {
-    id: "1",
+    id: "4",
     name: "Hair Shampoo",
     price: "$40",
     image: require("../assets/images/ShampooHair.png"), // Caminho local
   },
   {
-    id: "2",
+    id: "1",
     name: "Hair Care Kit",
     price: "$150",
     image: require("../assets/images/HairCareKit.png"), // Caminho local
   },
   {
     id: "3",
+    name: "Hydration Cream",
+    price: "$110",
+    image: require("../assets/images/Hydra.png"), // Caminho local
+  },
+  {
+    id: "2",
     name: "Hair Conditioner",
     price: "$110",
     image: require("../assets/images/cond.png"), // Caminho local
