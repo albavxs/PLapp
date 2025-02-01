@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
 
 const styles = StyleSheet.create({
   footer: {
-    position: 'absolute',
+    position: 'fixed',
     bottom: 1,
     width: '100%',
     flexDirection: 'row',

@@ -21,13 +21,7 @@ const reviews: Review[] = [
     date: '2 days ago',
     rating: 4,
   },
-  {
-    id: '2',
-    name: 'Alex Morgan',
-    text: 'Gucci transcribes its heritage, creativity, and innovation into a plenitude of collections. From staple items to distinctive accessories.',
-    date: '2 days ago',
-    rating: 4,
-  },
+  
 ];
 
 const products = [

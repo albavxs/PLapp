@@ -83,14 +83,14 @@ const App: React.FC = () => {
         <Stack.Screen
           name="CatalogScreenHair"
           component={CatalogScreenHair}
-          options={{ title: "Hair (3)" }}
+          options={{ title: "Hair (4)" }}
         />
 
         {/* Catálogo de produtos para barba */}
         <Stack.Screen
           name="CatalogScreenBeard"
           component={CatalogScreenBeard}
-          options={{ title: "Beard (3)" }}
+          options={{ title: "Beard (4)" }}
         />
 
         {/* Tela de login */}

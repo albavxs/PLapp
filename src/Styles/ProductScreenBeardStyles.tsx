@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 20,
     padding: 10,
-   
     borderRadius: 10,
   },
   reviewTextContainer: {
@@ -91,17 +90,29 @@ const styles = StyleSheet.create({
     color: '#f1c40f',
   },
   addToBagButton: {
-    margin: 20,
-    backgroundColor: '#6c63ff',
+    backgroundColor: '#9B6EF3', 
+    borderRadius: 30, 
     paddingVertical: 15,
-    borderRadius: 10,
+    flexDirection: 'row', 
+    justifyContent: 'space-between', 
     alignItems: 'center',
+    paddingHorizontal: 20,
+    width: '90%',
+    alignSelf: 'center',
   },
+  
   addToBagButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
   },
+  
+  priceText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  
   listContent: {
     paddingBottom: 20,
   },

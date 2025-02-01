@@ -35,31 +35,31 @@ const products = [
     id: '3',
     name: "Beard Shampoo",
     price: "$47",
-    image: require('../assets/images/BeardShampoo.png'), // Caminho local
+    image: require('../assets/images/BeardShampoo.png'), 
   },
   {
     id: '1',
     name: "Beard Care Kit",
     price: "$150",
-    image: require('../assets/images/BeardKitt.png'), // Caminho local
+    image: require('../assets/images/BeardKitt.png'), 
   },
   {
     id: "2",
     name: "Shaving Foam",
     price: "$16",
-    image: require('../assets/images/ShavingFoam.png'), // Caminho local
+    image: require('../assets/images/ShavingFoam.png'), 
   },
   {
     id: "4",
     name: "After Shave",
     price: "$25",
-    image: require("../assets/images/AfterShave.png"), // Caminho local
+    image: require("../assets/images/AfterShave.png"), 
   },
 ];
 
 const ProductScreenBeard: React.FC = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'ProductScreenBeard'>>(); // Defina o tipo correto para a rota
-  const { id } = route.params; // Agora o TypeScript sabe que 'id' é uma string
+  const { id } = route.params; 
 
   const [product, setProduct] = useState<typeof products[0] | null>(null);
 
@@ -132,6 +132,7 @@ const ProductScreenBeard: React.FC = () => {
       contentContainerStyle={styles.listContent}
       ListFooterComponent={
         <TouchableOpacity style={styles.addToBagButton}>
+           <CustomText style={styles.priceText}>{product.price}</CustomText>
           <CustomText style={styles.addToBagButtonText}>Add to Bag</CustomText>
         </TouchableOpacity>
       }

@@ -8,28 +8,28 @@ import CustomText from "../components/CustomText";
 
 const products = [
   {
-    id: '1',
+    id: '3',
     name: "Beard Shampoo",
-    price: "$40",
-    image: require('../assets/images/BeardShampoo.png'), // Caminho local
+    price: "$47",
+    image: require('../assets/images/BeardShampoo.png'), 
   },
   {
-    id: '2',
+    id: '1',
     name: "Beard Care Kit",
     price: "$150",
-    image: require('../assets/images/BeardKitt.png'), // Caminho local
+    image: require('../assets/images/BeardKitt.png'), 
   },
   {
-    id: "3",
+    id: "2",
     name: "Shaving Foam",
     price: "$16",
-    image: require('../assets/images/ShavingFoam.png'), // Caminho local
+    image: require('../assets/images/ShavingFoam.png'), 
   },
   {
     id: "4",
     name: "After Shave",
     price: "$25",
-    image: require("../assets/images/AfterShave.png"), // Caminho local
+    image: require("../assets/images/AfterShave.png"), 
   },
  
 ];

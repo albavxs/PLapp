@@ -15,7 +15,7 @@ type Props = {
 const products = [
   { id: "1", name: "Hair Care Kit", price: "$150.00", image: require("../assets/images/HairCareKit.png") },
   { id: "2", name: "Shaving Foam", price: "$16.00", image: require("../assets/images/ShavingFoam.png") },
-  { id: "3", name: "Beard Shampoo", price: "$47.00", image: require("../assets/images/BeardShampoo.png") },
+  { id: "3", name: "Beard Shampoo", price: "$37.00", image: require("../assets/images/BeardShampoo.png") },
   { id: "4", name: "Hair Shampoo", price: "$47.00", image: require("../assets/images/ShampooHair.png") },
 ];
 
