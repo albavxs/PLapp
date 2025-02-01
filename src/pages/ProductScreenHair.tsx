@@ -126,6 +126,7 @@ const ProductScreenHair: React.FC = () => {
       contentContainerStyle={styles.listContent}
       ListFooterComponent={
         <TouchableOpacity style={styles.addToBagButton}>
+          <CustomText style={styles.priceText}>{product.price}</CustomText>
           <CustomText style={styles.addToBagButtonText}>Add to Bag</CustomText>
         </TouchableOpacity>
       }

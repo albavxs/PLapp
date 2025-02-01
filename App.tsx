@@ -14,6 +14,7 @@ import ProductScreenHair from "./src/pages/ProductScreenHair";
 import ProductScreenBeard from "./src/pages/ProductScreenBeard";
 import TokenScreen from "./src/pages/TokenScreen"; // Importando a tela correta
 import Footer from "./src/components/Footer"; // Importando o footer
+import ConfigScreen from "./src/pages/ConfigScreen";
 
 // Tipos para navegação
 export type RootStackParamList = {
@@ -26,6 +27,7 @@ export type RootStackParamList = {
   CartScreen: undefined;
   ProductScreenHair: { id: string };
   ProductScreenBeard: { id: string };
+  ConfigScreen: undefined;
   TokenScreen: { email: string }; // Definindo corretamente o parâmetro
 };
 
@@ -132,6 +134,12 @@ const App: React.FC = () => {
           name="TokenScreen"
           component={TokenScreen}
           options={{ title: "Token Screen" }}
+        />
+
+        <Stack.Screen
+          name="ConfigScreen"
+          component={ConfigScreen}
+          options={{ title: " Config Screen" }}
         />
       </Stack.Navigator>
 

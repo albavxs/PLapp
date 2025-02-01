@@ -25,8 +25,8 @@ const Footer: React.FC = () => {
         <Icon name="person-circle-outline" size={30} color="#fff" />
       </TouchableOpacity>
 
-      {/* Navegar para o Catalogo de Barba */}
-      <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenBeard")}>
+      {/* Navigate to settings  */}
+      <TouchableOpacity onPress={() => navigation.navigate("ConfigScreen")}>
         <Icon name="settings-outline" size={24} color="#fff" />
       </TouchableOpacity>
     </View>
