@@ -1,3 +1,4 @@
+import { HomeIcon } from "lucide-react";
 import { StyleSheet, Dimensions } from "react-native";
 
 const { width } = Dimensions.get("window");
@@ -12,6 +13,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginBottom: 30,
+  },
+  HomeIcon: {
+    marginTop: 50,
   },
   icon: {
     width: 30,

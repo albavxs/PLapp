@@ -4,6 +4,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { RootStackParamList } from "../../App";
 import styles from "../Styles/HomeScreenStyles";
 import CustomText from "../components/CustomText";
+import Icon from 'react-native-vector-icons/Ionicons';
 
 // Tipagem da navegação
 type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, "HomeScreen">;
@@ -42,12 +43,14 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       {/* Header */}
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}>
-          <Image source={require("../assets/icons/Account.png")} style={styles.icon} />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate("CartScreen")}>
-          <Image source={require("../assets/icons/Bag.png")} style={styles.icon} />
-        </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate("CreateAccountScreen")}
+        style={styles.HomeIcon}>
+        <Icon name="account-outline" size={34} color="#fff" />
+      </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("ConfigScreen")}
+        style={styles.HomeIcon}>
+        <Icon name="shoppingbag-outline" size={34} color="#fff" />
+      </TouchableOpacity>
       </View>
 
       {/* Search Bar */}
@@ -95,5 +98,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     </ScrollView>
   );
 };
+
+
 
 export default HomeScreen;
