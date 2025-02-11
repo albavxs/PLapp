@@ -45,11 +45,11 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
       <View style={styles.header}>
       <TouchableOpacity onPress={() => navigation.navigate("CreateAccountScreen")}
         style={styles.HomeIcon}>
-        <Icon name="account-outline" size={34} color="#fff" />
+        <Icon name="person-outline" size={34} color="#fff" />
       </TouchableOpacity>
         <TouchableOpacity onPress={() => navigation.navigate("ConfigScreen")}
         style={styles.HomeIcon}>
-        <Icon name="shoppingbag-outline" size={34} color="#fff" />
+        <Icon name="bag-handle-outline" size={34} color="#fff" />
       </TouchableOpacity>
       </View>
 
