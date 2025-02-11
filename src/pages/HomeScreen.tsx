@@ -43,7 +43,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
     <ScrollView contentContainerStyle={styles.scrollContainer}>
       {/* Header */}
       <View style={styles.header}>
-      <TouchableOpacity onPress={() => navigation.navigate("CreateAccountScreen")}
+      <TouchableOpacity onPress={() => navigation.navigate("LoginScreen")}
         style={styles.HomeIcon}>
         <Icon name="person-outline" size={34} color="#fff" />
       </TouchableOpacity>
