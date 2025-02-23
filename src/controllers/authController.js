@@ -39,6 +39,16 @@ const registerUser = async (req, res) => {
       .json({ message: "Todos os campos são obrigatórios" });
   }
 
+  // Regras para senhas seguras
+  const passwordRegex =
+    /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+  if (!passwordRegex.test(password)) {
+    return res.status(400).json({
+      message:
+          "A senha deve ter entre 8 e 20 caracteres, incluindo uma letra maiúscula, um número e um caractere especial.",
+    }); 
+  }
+
   try {
     const existingUser = await User.findOne({ where: { email } });
     if (existingUser) {
@@ -55,14 +65,13 @@ const registerUser = async (req, res) => {
       dob,
     });
 
-    res
-      .status(201)
-      .json({ message: "Conta criada com sucesso", user: newUser });
+    return res.status(201).json({ message: "Usuário registrado com sucesso" });
   } catch (error) {
-    console.error("Erro ao criar:", error);
-    res.status(500).json({ message: "Erro interno do servidor" });
+    console.error("Erro ao registrar usuário:", error);
+    return res.status(500).json({ message: "Erro interno do servidor" });
   }
 };
+
 
 
 // Exporta todas as funções necessárias

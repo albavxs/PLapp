@@ -10,16 +10,14 @@ const User = sequelize.define(
       autoIncrement: true,
     },
     firstName: {
-      // Alterado para 'firstName'
       type: DataTypes.STRING(50),
       allowNull: false,
-      field: "first_name", // Mapeia para a coluna 'first_name' no banco de dados
+      field: "first_name",
     },
     lastName: {
-      // Alterado para 'lastName'
       type: DataTypes.STRING(50),
       allowNull: false,
-      field: "last_name", // Mapeia para a coluna 'last_name' no banco de dados
+      field: "last_name",
     },
     email: {
       type: DataTypes.STRING(100),
@@ -34,12 +32,16 @@ const User = sequelize.define(
       type: DataTypes.DATE,
       allowNull: false,
     },
+    googleId: {
+      type: DataTypes.STRING, // Agora o googleId é opcional
+      allowNull: true, // Pode ser nulo até o login via Google
+    },
   },
   {
-    tableName: "users", // A tabela no banco de dados ainda usa o nome 'users'
-    timestamps: true, // Ativa o gerenciamento automático de createdAt e updatedAt
-    createdAt: "created_at", // Nome personalizado para o campo createdAt
-    updatedAt: "updated_at", // Nome personalizado para o campo updatedAt
+    tableName: "users",
+    timestamps: true,
+    createdAt: "created_at",
+    updatedAt: "updated_at",
   }
 );
 
