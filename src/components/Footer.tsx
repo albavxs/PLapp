@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
       </TouchableOpacity>
 
       {/* Navegar para o Catalogo de Cabelo */}
-      <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenHair")}>
+      <TouchableOpacity onPress={() => navigation.navigate("QuizScreen")}>
         <Icon name="happy-outline" size={30} color="#fff" />
       </TouchableOpacity>
 
