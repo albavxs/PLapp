@@ -4,24 +4,24 @@ import { ScrollView, View, Text, TouchableOpacity } from "react-native";
 const Quiz: React.FC = () => {
   const questions = [
     {
-      question: "Qual é a sua cor favorita?",
-      options: ["Vermelho", "Azul", "Verde", "Amarelo"],
+      question: "Como é seu cabelo ?",
+      options: ["Cresco", "Ondulado", "Liso", "Cacheado"],
     },
     {
-      question: "Qual animal você prefere?",
-      options: ["Cachorro", "Gato", "Pássaro", "Peixe"],
+      question: "Qual tipo de Problema você sofre ?",
+      options: ["Queda de cabelo/barba", "Cabelo ressecado", "Barba ressecado", "Cabelo quebrado", "Barba Falhada"],
     },
     {
-      question: "Qual é sua estação do ano favorita?",
-      options: ["Verão", "Inverno", "Primavera", "Outono"],
+      question: "",
+      options: ["", "I", "", ""],
     },
     {
-      question: "Qual é o seu tipo de filme preferido?",
-      options: ["Ação", "Comédia", "Drama", "Terror"],
+      question: "",
+      options: ["", "", "", ""],
     },
     {
-      question: "Qual sua bebida preferida?",
-      options: ["Café", "Chá", "Suco", "Refrigerante"],
+      question: "",
+      options: ["", "", "", ""],
     },
   ];
 
