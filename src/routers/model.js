@@ -32,10 +32,7 @@ const User = sequelize.define(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    googleId: {
-      type: DataTypes.STRING, // Agora o googleId é opcional
-      allowNull: true, // Pode ser nulo até o login via Google
-    },
+  
   },
   {
     tableName: "users",

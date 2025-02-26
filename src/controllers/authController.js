@@ -28,25 +28,22 @@ const authenticateUser = async (req, res) => {
   
 };
 
+
 // Função para registrar o usuário
 const registerUser = async (req, res) => {
   console.log("Dados recebidos:", req.body);
-  const { firstName, lastName, email, password, dob } = req.body;
+  let { firstName, lastName, email, password, dob } = req.body;
 
-  if (!firstName || !lastName || !email || !password || !dob) {
+  if (!firstName || !lastName || !email || !dob) {
     return res
       .status(400)
-      .json({ message: "Todos os campos são obrigatórios" });
+      .json({ message: "Todos os campos obrigatórios, exceto a senha" });
   }
 
-  // Regras para senhas seguras
-  const passwordRegex =
-    /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
-  if (!passwordRegex.test(password)) {
-    return res.status(400).json({
-      message:
-          "A senha deve ter entre 8 e 20 caracteres, incluindo uma letra maiúscula, um número e um caractere especial.",
-    }); 
+  // Se a senha não for fornecida, gera uma senha padrão
+  if (!password) {
+    password = generateRandomPassword();
+    console.log("Senha gerada automaticamente:", password);
   }
 
   try {
@@ -65,10 +62,12 @@ const registerUser = async (req, res) => {
       dob,
     });
 
-    return res.status(201).json({ message: "Usuário registrado com sucesso" });
+    res
+      .status(201)
+      .json({ message: "Conta criada com sucesso", user: newUser, password });
   } catch (error) {
-    console.error("Erro ao registrar usuário:", error);
-    return res.status(500).json({ message: "Erro interno do servidor" });
+    console.error("Erro ao criar:", error);
+    res.status(500).json({ message: "Erro interno do servidor" });
   }
 };
 
