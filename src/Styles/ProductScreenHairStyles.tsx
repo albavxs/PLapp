@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   quantity: {
-    color:'#F4F4F4',
+    color: '#F4F4F4',
     marginHorizontal: 10,
     fontSize: 18,
   },
@@ -66,12 +66,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 20,
     padding: 10,
-   
+
     borderRadius: 10,
   },
   reviewTextContainer: {
     flex: 1,
-    
+
   },
   reviewName: {
     fontSize: 16,
@@ -91,16 +91,25 @@ const styles = StyleSheet.create({
     color: '#f1c40f',
   },
   addToBagButton: {
-    margin: 20,
-    backgroundColor: '#6c63ff',
+    backgroundColor: '#9B6EF3', // Cor roxa semelhante à imagem
+    borderRadius: 30, // Bordas arredondadas
     paddingVertical: 15,
-    borderRadius: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    paddingHorizontal: 20,
+    width: '90%',
+    alignSelf: 'center',
   },
   addToBagButtonText: {
-    color: '#fff',
-    fontSize: 18,
-    fontWeight: 'bold',
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
+  },
+  priceText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '600',
   },
   listContent: {
     paddingBottom: 20,

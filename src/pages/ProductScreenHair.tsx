@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TouchableOpacity, FlatList, ListRenderItem } from 'react-native';
 import { useRoute, RouteProp } from '@react-navigation/native';
-import styles from '../Styles/ProductScreenHairStyles';
+import styles from '../Styles/ProductScreenHairStyles'
 import CustomText from 'src/components/CustomText';
 import { RootStackParamList } from '../../App'; // Importe seu RootStackParamList aqui
 
@@ -21,38 +21,38 @@ const reviews: Review[] = [
     date: '2 days ago',
     rating: 4,
   },
-  {
-    id: '2',
-    name: 'Alex Morgan',
-    text: 'Gucci transcribes its heritage, creativity, and innovation into a plenitude of collections. From staple items to distinctive accessories.',
-    date: '2 days ago',
-    rating: 4,
-  },
+  
 ];
 
 const products = [
   {
-    id: '1',
+    id: "4",
     name: "Hair Shampoo",
     price: "$40",
-    image: require('../assets/images/ShampooHair.png'),
+    image: require("../assets/images/ShampooHair.png"), // Caminho local
   },
   {
-    id: '2',
+    id: "1",
     name: "Hair Care Kit",
     price: "$150",
-    image: require('../assets/images/HairCareKit.png'),
+    image: require("../assets/images/HairCareKit.png"), // Caminho local
   },
   {
-    id: '3',
+    id: "3",
+    name: "Hydration Cream",
+    price: "$110",
+    image: require("../assets/images/Hydra.png"), // Caminho local
+  },
+  {
+    id: "2",
     name: "Hair Conditioner",
     price: "$110",
-    image: require('../assets/images/cond.png'),
+    image: require("../assets/images/cond.png"), // Caminho local
   },
 ];
 
 const ProductScreenHair: React.FC = () => {
-  const route = useRoute<RouteProp<RootStackParamList, 'ProductScreenHair'>>(); // Defina o tipo correto para a rota
+  const route = useRoute<RouteProp<RootStackParamList, 'ProductScreenBeard'>>(); // Defina o tipo correto para a rota
   const { id } = route.params; // Agora o TypeScript sabe que 'id' é uma string
 
   const [product, setProduct] = useState<typeof products[0] | null>(null);
@@ -126,6 +126,7 @@ const ProductScreenHair: React.FC = () => {
       contentContainerStyle={styles.listContent}
       ListFooterComponent={
         <TouchableOpacity style={styles.addToBagButton}>
+          <CustomText style={styles.priceText}>{product.price}</CustomText>
           <CustomText style={styles.addToBagButtonText}>Add to Bag</CustomText>
         </TouchableOpacity>
       }

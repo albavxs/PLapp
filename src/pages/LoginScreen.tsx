@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { View, TextInput, TouchableOpacity, ActivityIndicator, Alert, Linking } from "react-native";
+import { View, TextInput, TouchableOpacity, ActivityIndicator, Alert } from "react-native";
 import styles from "../Styles/LoginScreenStyles";
 import { useNavigation, NavigationProp } from "@react-navigation/native";
 import { RootStackParamList } from "../../App";
 import CustomText from "../components/CustomText";
 import Icon from "react-native-vector-icons/FontAwesome";
-import * as Device from "expo-device";
 
 const LoginScreen: React.FC = () => {
   const navigation = useNavigation<NavigationProp<RootStackParamList>>();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -46,24 +46,6 @@ const LoginScreen: React.FC = () => {
       Alert.alert("Erro", "Falha ao conectar-se à API.");
     }
   };
-
-  const handleGoogleAuth = async () => {
-  // Garantir que as informações do dispositivo sejam capturadas corretamente
-  const deviceName = Device.modelName || "UnknownDevice";
-  const deviceId = Device.osBuildId || "UnknownID";
-
-  try {
-    // Construir o link de autenticação com as informações do dispositivo
-    const googleLoginUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=887525463720-3muju51cf5e6g4hi2mvvk9b4nuh06g17.apps.googleusercontent.com&redirect_uri=com.pegui.primeLookauthcallback://auth&response_type=code&scope=openid%20profile%20email&access_type=offline&prompt=consent&device_name=${encodeURIComponent(deviceName)}&device_id=${encodeURIComponent(deviceId)}`;
-
-    console.log("Google Login URL: ", googleLoginUrl); // Adicione um log para verificar se o URL está correto
-
-    // Abrir o link de autenticação do Google
-    Linking.openURL(googleLoginUrl);
-  } catch (error) {
-    Alert.alert("Erro", "Erro ao iniciar o login com o Google.");
-  }
-};
 
   return (
     <View style={styles.container}>
@@ -105,11 +87,10 @@ const LoginScreen: React.FC = () => {
       </TouchableOpacity>
 
       <View style={styles.socialButtons}>
-        <TouchableOpacity style={styles.socialButton} onPress={handleGoogleAuth}>
+        <TouchableOpacity style={styles.socialButton}>
           <Icon name="google" size={20} color="#DB4437" />
           <CustomText style={styles.socialButtonText}>Continue With Google</CustomText>
         </TouchableOpacity>
-
         <TouchableOpacity style={styles.socialButton}>
           <Icon name="facebook" size={20} color="#3b5998" />
           <CustomText style={styles.socialButtonText}>Continue With Facebook</CustomText>

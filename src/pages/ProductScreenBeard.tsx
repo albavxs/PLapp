@@ -32,28 +32,34 @@ const reviews: Review[] = [
 
 const products = [
   {
-    id: '1',
-    name: "Shampoo para Cabelo",
-    price: "$40",
-    image: require('../assets/images/ShampooHair.png'),
-  },
-  {
-    id: '2',
-    name: "Kit cuidados com o Cabelo",
-    price: "$150",
-    image: require('../assets/images/HairCareKit.png'),
-  },
-  {
     id: '3',
-    name: "Condicionador",
-    price: "$110",
-    image: require('../assets/images/cond.png'),
+    name: "Beard Shampoo",
+    price: "$47",
+    image: require('../assets/images/BeardShampoo.png'), 
+  },
+  {
+    id: '1',
+    name: "Beard Care Kit",
+    price: "$150",
+    image: require('../assets/images/BeardKitt.png'), 
+  },
+  {
+    id: "2",
+    name: "Shaving Foam",
+    price: "$16",
+    image: require('../assets/images/ShavingFoam.png'), 
+  },
+  {
+    id: "4",
+    name: "After Shave",
+    price: "$25",
+    image: require("../assets/images/AfterShave.png"), 
   },
 ];
 
-const ProductScreenHair: React.FC = () => {
+const ProductScreenBeard: React.FC = () => {
   const route = useRoute<RouteProp<RootStackParamList, 'ProductScreenBeard'>>(); // Defina o tipo correto para a rota
-  const { id } = route.params; // Agora o TypeScript sabe que 'id' é uma string
+  const { id } = route.params; 
 
   const [product, setProduct] = useState<typeof products[0] | null>(null);
 
@@ -126,6 +132,7 @@ const ProductScreenHair: React.FC = () => {
       contentContainerStyle={styles.listContent}
       ListFooterComponent={
         <TouchableOpacity style={styles.addToBagButton}>
+           <CustomText style={styles.priceText}>{product.price}</CustomText>
           <CustomText style={styles.addToBagButtonText}>Add to Bag</CustomText>
         </TouchableOpacity>
       }
@@ -133,4 +140,4 @@ const ProductScreenHair: React.FC = () => {
   );
 };
 
-export default ProductScreenHair;
+export default ProductScreenBeard;

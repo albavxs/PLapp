@@ -10,11 +10,11 @@ import CatalogScreenBeard from "./src/pages/CatalogScreenBeard";
 import LoginScreen from "./src/pages/LoginScreen";
 import CreateAccountScreen from "./src/pages/CreateAccountScreen";
 import RecoverPassword from "./src/pages/RecoverPassword";
-import ShoppingCart from "./src/pages/ShoppingCartScreen";
 import ProductScreenHair from "./src/pages/ProductScreenHair";
 import ProductScreenBeard from "./src/pages/ProductScreenBeard";
 import TokenScreen from "./src/pages/TokenScreen"; // Importando a tela correta
 import Footer from "./src/components/Footer"; // Importando o footer
+import ConfigScreen from "./src/pages/ConfigScreen";
 
 // Tipos para navegação
 export type RootStackParamList = {
@@ -24,9 +24,10 @@ export type RootStackParamList = {
   LoginScreen: undefined;
   CreateAccountScreen: undefined;
   RecoverPassword: undefined;
-  ShoppingCart: undefined;
+  CartScreen: undefined;
   ProductScreenHair: { id: string };
   ProductScreenBeard: { id: string };
+  ConfigScreen: undefined;
   TokenScreen: { email: string }; // Definindo corretamente o parâmetro
 };
 
@@ -84,14 +85,14 @@ const App: React.FC = () => {
         <Stack.Screen
           name="CatalogScreenHair"
           component={CatalogScreenHair}
-          options={{ title: "Hair (3)" }}
+          options={{ title: "Hair (4)" }}
         />
 
         {/* Catálogo de produtos para barba */}
         <Stack.Screen
           name="CatalogScreenBeard"
           component={CatalogScreenBeard}
-          options={{ title: "Beard (3)" }}
+          options={{ title: "Beard (4)" }}
         />
 
         {/* Tela de login */}
@@ -114,14 +115,6 @@ const App: React.FC = () => {
           component={RecoverPassword}
           options={{ title: "Recover Password" }}
         />
-
-        {/* Tela do carrinho de compras */}
-        <Stack.Screen
-          name="ShoppingCart"
-          component={ShoppingCart}
-          options={{ title: "Shopping Cart" }}
-        />
-
         {/* Tela de detalhes do produto para cabelo */}
         <Stack.Screen
           name="ProductScreenHair"
@@ -141,6 +134,12 @@ const App: React.FC = () => {
           name="TokenScreen"
           component={TokenScreen}
           options={{ title: "Token Screen" }}
+        />
+
+        <Stack.Screen
+          name="ConfigScreen"
+          component={ConfigScreen}
+          options={{ title: " Config Screen" }}
         />
       </Stack.Navigator>
 

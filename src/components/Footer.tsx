@@ -22,11 +22,11 @@ const Footer: React.FC = () => {
 
       {/* Navegar para o Catalogo de Cabelo */}
       <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenHair")}>
-        <Icon name="person-circle-outline" size={30} color="#fff" />
+        <Icon name="happy-outline" size={30} color="#fff" />
       </TouchableOpacity>
 
-      {/* Navegar para o Catalogo de Barba */}
-      <TouchableOpacity onPress={() => navigation.navigate("CatalogScreenBeard")}>
+      {/* Navigate to settings  */}
+      <TouchableOpacity onPress={() => navigation.navigate("ConfigScreen")}>
         <Icon name="settings-outline" size={24} color="#fff" />
       </TouchableOpacity>
     </View>
@@ -35,14 +35,15 @@ const Footer: React.FC = () => {
 
 const styles = StyleSheet.create({
   footer: {
-    position: 'absolute',
-    bottom: 0,
+    position: 'fixed',
+    bottom: 1,
     width: '100%',
     flexDirection: 'row',
-    justifyContent: 'space-around',
-    padding: 10,
+    justifyContent: 'space-between',
+    padding: 30,
     backgroundColor: '#1E1E1E',
-    zIndex: 1,
+    marginBottom: -10,
+
   },
 });
 
