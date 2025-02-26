@@ -5,7 +5,7 @@ const Quiz: React.FC = () => {
   const questions = [
     {
       question: "Como é seu cabelo ?",
-      options: ["Cresco", "Ondulado", "Liso", "Cacheado"],
+      options: ["Crespo","Ondulado", "Liso", "Cacheado"],
     },
     {
       question: "Qual tipo de Problema você sofre ?",
@@ -13,7 +13,7 @@ const Quiz: React.FC = () => {
     },
     {
       question: "",
-      options: ["", "I", "", ""],
+      options: ["", "", "", ""],
     },
     {
       question: "",

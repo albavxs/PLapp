@@ -22,9 +22,9 @@ const Footer: React.FC = () => {
 
       {/* Navegar para o Catalogo de Cabelo */}
       <TouchableOpacity onPress={() => navigation.navigate("QuizScreen")}>
-        <Icon name="happy-outline" size={30} color="#fff" />
+        <Icon name="reader-outline" size={30} color="#fff" />
       </TouchableOpacity>
-
+  
       {/* Navigate to settings  */}
       <TouchableOpacity onPress={() => navigation.navigate("ConfigScreen")}>
         <Icon name="settings-outline" size={24} color="#fff" />
