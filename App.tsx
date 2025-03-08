@@ -12,9 +12,10 @@ import CreateAccountScreen from "./src/pages/CreateAccountScreen";
 import RecoverPassword from "./src/pages/RecoverPassword";
 import ProductScreenHair from "./src/pages/ProductScreenHair";
 import ProductScreenBeard from "./src/pages/ProductScreenBeard";
-import TokenScreen from "./src/pages/TokenScreen"; // Importando a tela correta
-import Footer from "./src/components/Footer"; // Importando o footer
+import TokenScreen from "./src/pages/TokenScreen"; 
+import Footer from "./src/components/Footer"; 
 import ConfigScreen from "./src/pages/ConfigScreen";
+import QuizScreen from "./src/pages/QuizScreen";
 
 // Tipos para navegação
 export type RootStackParamList = {
@@ -29,6 +30,7 @@ export type RootStackParamList = {
   ProductScreenBeard: { id: string };
   ConfigScreen: undefined;
   TokenScreen: { email: string }; // Definindo corretamente o parâmetro
+  QuizScreen: undefined;
 };
 
 // Tipo de produto
@@ -141,7 +143,14 @@ const App: React.FC = () => {
           component={ConfigScreen}
           options={{ title: " Config Screen" }}
         />
+        <Stack.Screen
+          name="QuizScreen"
+          component={QuizScreen}
+          options={{ title: "Quiz " }}  
+        />
+
       </Stack.Navigator>
+
 
       {/* Adiciona o Footer abaixo da navegação */}
       <Footer />

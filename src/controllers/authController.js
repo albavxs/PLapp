@@ -28,15 +28,22 @@ const authenticateUser = async (req, res) => {
   
 };
 
+
 // Função para registrar o usuário
 const registerUser = async (req, res) => {
   console.log("Dados recebidos:", req.body);
-  const { firstName, lastName, email, password, dob } = req.body;
+  let { firstName, lastName, email, password, dob } = req.body;
 
-  if (!firstName || !lastName || !email || !password || !dob) {
+  if (!firstName || !lastName || !email || !dob) {
     return res
       .status(400)
-      .json({ message: "Todos os campos são obrigatórios" });
+      .json({ message: "Todos os campos obrigatórios, exceto a senha" });
+  }
+
+  // Se a senha não for fornecida, gera uma senha padrão
+  if (!password) {
+    password = generateRandomPassword();
+    console.log("Senha gerada automaticamente:", password);
   }
 
   try {
@@ -57,12 +64,13 @@ const registerUser = async (req, res) => {
 
     res
       .status(201)
-      .json({ message: "Conta criada com sucesso", user: newUser });
+      .json({ message: "Conta criada com sucesso", user: newUser, password });
   } catch (error) {
     console.error("Erro ao criar:", error);
     res.status(500).json({ message: "Erro interno do servidor" });
   }
 };
+
 
 
 // Exporta todas as funções necessárias

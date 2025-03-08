@@ -26,6 +26,7 @@
 5. **Dependências do Projeto**: Instale as dependências do projeto com:
    ```bash
    npm install
+   npx expo install expo-auth-session
    ```
    
 6. **Dependências da API **: Instale as dependências com:
